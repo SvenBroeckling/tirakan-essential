@@ -1,0 +1,4 @@
+.texlive-cache
+.idea
+*.aux
+*.pdf

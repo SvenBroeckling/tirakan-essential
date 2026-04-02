@@ -1,0 +1,11 @@
+\worldchapter{Bogen und Datenblatter}{appendix-templates}
+\label{app:sheets}
+
+Dieses Kapitel sammelt druckfertige Arbeitsblatter fur den Spieltisch. Der Charakterbogen unten folgt dem aktiven Regelsatz aus Charaktererschaffung, Marks, Ausrustung, Konflikten sowie Magie und Glaube.
+
+\IfFileExists{sheet.pdf}{
+  \includepdf[pages=-,fitpaper=true,pagecommand={}]{sheet.pdf}
+}{
+  \section*{Charakterbogen fehlt}
+  Die Datei sheet.pdf wurde noch nicht erzeugt. Baue im Verzeichnis book/ zuerst sheet.tex, damit der Anhang den druckfertigen Bogen einbetten kann.
+}

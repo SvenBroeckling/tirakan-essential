@@ -1,0 +1,135 @@
+\worldchapter{Konflikte und Kampf}{combat}
+\label{ch:konflikte}
+
+\begin{multicols*}{2}
+
+\section{Kampfaufbau}
+Zu Beginn eines Konflikts:
+\begin{enumerate}[leftmargin=*]
+\item eine grobe Karte oder Zonenstruktur festlegen
+\item Distanzsegmente zwischen Gruppen bestimmen
+\item Initiative testen: Deftness + Perception
+\item aktuelle Actions notieren
+\end{enumerate}
+
+\section{Actions pro Runde}
+Standard ist \textbf{2 Actions} pro Runde. Zusatzliche Actions gibt es nur durch ausdruckliche Regeln.
+
+\section{Rundenablauf}
+\begin{enumerate}[leftmargin=*]
+\item Startfenster der Runde
+\item in Initiativreihenfolge: Actions auf Maximalwert auffrischen, dann ausgeben oder halten
+\item Endfenster der Runde
+\item nachste Runde
+\end{enumerate}
+
+Gehaltene Actions verfallen beim nachsten eigenen Refresh.
+
+\section{Reaktionen}
+Eine Reaktion ist erlaubt, wenn alles zugleich zutrifft:
+\begin{itemize}[leftmargin=*]
+\item der Charakter nimmt den Auslöser direkt wahr
+\item sie hat mindestens 1 ungenutzte Action
+\item sie hat eine passende Reaktion dazu erklart
+\end{itemize}
+
+Die Reaktion wird angesagt, sobald der Ausloser klar ist, und wird fiktional abgehandelt, bevor der auslosende Effekt landet.
+
+Zusatzlich gilt:
+\begin{itemize}[leftmargin=*]
+\item pro Auslöser darf jeder Charakter höchstens einmal reagieren
+\item beliebig viele verschiedene Charaktere dürfen auf denselben Auslöser reagieren
+\item reagieren mehrere Charaktere zugleich, wird in Initiativreihenfolge aufgelöst
+\end{itemize}
+
+\section{Quick Reaction}
+Direkt vor Runde 1 testet jeder beteiligte Charakter Instinct + Perception.
+\begin{itemize}[leftmargin=*]
+\item Erfolg: eine einmalige Reaktions-Action vor dem ersten eigenen Zug
+\item Misserfolg: keine Vorab-Reaktion
+\end{itemize}
+
+\section{Aktionsliste}
+Sofern nicht anders angegeben, kostet jede Aktion 1 Action.
+\begin{description}[style=nextline,leftmargin=0pt]
+\item[\textbf{Strike}] Nahkampfangriff
+\item[\textbf{Shoot}] Fernkampfangriff
+\item[\textbf{Move}] 1 Distanzsegment verschieben
+\item[\textbf{Sprint}] bis zu 2 Bander, danach -10 auf den nachsten Test der Runde
+\item[\textbf{Take Cover}] bis zum Verlassen der Deckung +10 auf Reaktionen gegen Fernangriffe
+\item[\textbf{Aim/Set}] der nachste Strike oder Shoot erhalt +10
+\item[\textbf{Use Item}] Werkzeug, Verbrauchsgut, Nachladen, Mechanismus
+\item[\textbf{Cast Fast}] ein nicht-rituelles Wirken
+\item[\textbf{Assist}] eine nahe Verbundete erhalt +10 auf ihren unmittelbaren Test
+\item[\textbf{Withdraw}] Engagement verlassen, ohne einen Parting Strike auszulosen
+\item[\textbf{Recover}] Shaken entfernen oder auf einen Dying-Verbundeten Stabilize versuchen
+\end{description}
+
+Plausible Sonderaktionen sind erlaubt. Standardkosten sind 1, bei klar komplexen Vorgangen 2 Actions.
+
+\section{Distanzsegmente}
+Es gibt vier relative Distanzen:
+\begin{itemize}[leftmargin=*]
+\item \textbf{Engaged}
+\item \textbf{Near}
+\item \textbf{Far}
+\item \textbf{Distant}
+\end{itemize}
+
+Sie sind keine Meterangaben, sondern taktische Kategorien zwischen Charakteren oder Gruppen.
+
+Wichtige Regeln:
+\begin{itemize}[leftmargin=*]
+\item \textbf{Move} verschiebt 1 Band.
+\item \textbf{Sprint} verschiebt bis zu 2 Bandern.
+\item Der Sprung von nicht \textbf{Engaged} zu \textbf{Engaged} bedeutet tatsachlichen Kontakt.
+\item Umpositionierung im selben Band ist frei, solange daraus kein deutlicher mechanischer Vorteil entsteht.
+\item Falls Deckung, Flanke, Blocker oder Gefahr uberwunden werden, kostet dieselbe Umpositionierung \textbf{Move} oder \textbf{Sprint}.
+\end{itemize}
+
+Faustregeln fur Innenraume:
+\begin{itemize}[leftmargin=*]
+\item in den Nachbarraum oder durch eine offene Verbindung wechseln: meist 1 Band
+\item in einen getrennten Raum, ein anderes Stockwerk oder hinter mehrere Sichtblocker wechseln: meist 2 Bander
+\end{itemize}
+
+\section{Angriff auflosen}
+\subsection{Angreifer}
+\begin{itemize}[leftmargin=*]
+\item Nahkampf: Body + Combat
+\item Fernkampf: Deftness + Shooting
+\end{itemize}
+
+\subsection{Verteidiger}
+Der Verteidiger kann reagieren mit:
+\begin{itemize}[leftmargin=*]
+\item \textbf{Parry}: Instinct + Combat
+\item \textbf{Evade}: Deftness + Athletics
+\item \textbf{Guard}: Schildbonus
+\item \textbf{Take hit}: keine Reaktion
+\end{itemize}
+
+\subsection{Treffer und Schaden}
+\begin{itemize}[leftmargin=*]
+\item Verliert der Angreifer die Gegenprobe: kein Treffer.
+\item Nimmt der Verteidiger den Treffer und der Angriff misslingt: kein Treffer.
+\item Nimmt der Verteidiger den Treffer und der Angriff gelingt: Grundschaden.
+\item Gewinnt der Angreifer knapp: Grundschaden.
+\item Gewinnt der Angreifer sauber oder stark: Grundschaden +1.
+\item Ist der gewinnende Treffer kritisch: zusätzlich +1 Schaden.
+\item Danach Rustung einmal anwenden.
+\end{itemize}
+
+\section{Parting Strike}
+Wenn jemand \textbf{Engagement} ohne \textbf{Withdraw} verlasst, darf ein gebundener Gegner sofort einen freien \textbf{Strike} ausfuhren.
+
+\section{Zustandsverteilung im Kampf}
+Waffen, Consequences, Feuer, Gift oder spezielle Effekte konnen Zustande auslosen. Ihre Regeln stehen gesammelt in \cref{ch:folgen}.
+
+\begin{ruleexample}
+Eine Speerträgerin halt 1 Action zuruck.
+Ein Gegner stürmt aus \textbf{Near} in \textbf{Engaged}.
+Wegen \textbf{Reach} darf sie zuerst zuschlagen.
+Hat sie zuvor \textbf{Aim/Set} genutzt, gibt es gegen genau diesen Eintritt zusätzlich +1 Schaden.
+\end{ruleexample}
+\end{multicols*}

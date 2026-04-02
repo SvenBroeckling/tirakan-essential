@@ -1,0 +1,212 @@
+\documentclass[11pt,open=any,oneside]{scrbook}
+
+\usepackage[german]{babel}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{pdfpages}
+\usepackage{scrlayer-scrpage}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\geometry{left=3cm,right=3cm,top=3.5cm,bottom=3.5cm}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{1}
+\setlength{\columnsep}{20pt}
+\setlength{\multicolsep}{0pt}
+\raggedcolumns
+
+\setmainfont{EBGaramond-Regular.ttf}[
+  Path=assets/fonts/,
+  BoldFont=EBGaramond-Bold.ttf,
+  ItalicFont=EBGaramond-Italic.ttf,
+  BoldItalicFont=EBGaramond-BoldItalic.ttf
+]
+\setsansfont{Metamorphous-Regular.ttf}[Path=assets/fonts/]
+\newfontfamily\displayfont{Metamorphous-Regular.ttf}[
+  Path=assets/fonts/,
+  BoldFont=Metamorphous-Regular.ttf,
+  BoldFeatures={FakeBold=1.5}
+]
+\setmonofont{Oxanium-Regular.ttf}[
+  Path=assets/fonts/,
+  BoldFont=Oxanium-Bold.ttf
+]
+
+\definecolor{primarytext}{RGB}{20,18,17}
+\definecolor{examplecolor}{RGB}{34,94,56}
+\definecolor{quotecolor}{RGB}{140,52,28}
+\definecolor{linkcolor}{RGB}{143,49,20}
+\definecolor{ruleaccent}{RGB}{84,33,20}
+\color{primarytext}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkcolor,
+  urlcolor=linkcolor,
+  pdftitle={Tirakans Reiche Regelbuch},
+  pdfauthor={OpenAI Codex}
+}
+
+\AddToShipoutPictureBG{%
+  \AtPageLowerLeft{%
+    \includegraphics[width=\paperwidth,height=\paperheight]{assets/images/tirakan-background.png}%
+  }%
+}
+
+\clearpairofpagestyles
+\ihead{}
+\ohead{}
+\cfoot{\displayfont\thepage}
+
+\newcommand{\booktitle}{Tirakans Reiche}
+\newcommand{\booksubtitle}{Freies Dark-Fantasy-Rollenspiel}
+\newcommand{\trans}[1]{#1}
+
+\newcommand{\chapterimage}[1]{assets/images/chapters/tirakan-#1.png}
+
+\let\origchapterlinesformat\chapterlinesformat
+\renewcommand*{\chapterlinesformat}[3]{}
+\makeatletter
+\newcommand{\printtoc}{\@starttoc{toc}}
+\newcommand{\renderchapterpage}[2]{%
+  \thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \path[use as bounding box] (current page.south west) rectangle (current page.north east);
+    \node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{\chapterimage{#2}}};
+    \fill[black, opacity=0.42] (current page.south west) rectangle (current page.north east);
+    \node[
+      anchor=north west,
+      text=white,
+      font=\displayfont\fontsize{52pt}{66pt}\selectfont,
+      inner sep=10pt
+    ] at ([xshift=1.5cm,yshift=-1.5cm]current page.north west) {\thechapter};
+    \node[
+      anchor=south east,
+      text=white,
+      align=right,
+      font=\displayfont\fontsize{40pt}{50pt}\selectfont,
+      text width=0.82\paperwidth
+    ] at ([xshift=-1.5cm,yshift=1.5cm]current page.south east) {#1};
+  \end{tikzpicture}%
+}
+\newcommand{\worldchapter}[3][]{%
+  \if@openright\cleardoublepage\else\clearpage\fi
+  \refstepcounter{chapter}%
+  \phantomsection
+  \if\relax\detokenize{#1}\relax
+    \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#2}%
+    \chaptermark{#2}%
+  \else
+    \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#1}%
+    \chaptermark{#1}%
+  \fi
+  \renderchapterpage{#2}{#3}%
+  \clearpage
+}
+\makeatother
+
+\newenvironment{ruleexample}[1][Beispiel]
+{\par\smallskip\noindent\color{ruleaccent}\textbf{#1. }\itshape}
+{\par\smallskip}
+
+\newenvironment{pexample}[1][]
+{
+  \color{examplecolor}
+  \ifstrempty{#1}{}{
+    \par\addvspace{0.5em}
+    \noindent\textbf{#1}\par\nopagebreak
+    \addvspace{0.1em}
+  }
+}
+{
+  \par\addvspace{1em}
+}
+
+\newcommand{\pquoteauthor}{}
+\newenvironment{pquote}[1]
+{
+  \renewcommand{\pquoteauthor}{#1}
+  \begin{flushright}
+  \color{quotecolor}
+  \slshape
+}
+{
+  \\ \medskip
+  \upshape\textit{\pquoteauthor}
+  \end{flushright}
+}
+
+\begin{document}
+
+\begin{titlepage}
+  \begin{tikzpicture}[remember picture,overlay]
+    \path[use as bounding box] (current page.south west) rectangle (current page.north east);
+    \node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{assets/images/tirakan-title.png}};
+    \fill[black, opacity=0.42] (current page.south west) rectangle (current page.north east);
+    \coordinate (titlepos) at ([yshift=-5.8cm]current page.north);
+    \node[
+      text=white,
+      font=\displayfont\bfseries\fontsize{42}{48}\selectfont,
+      text width=0.82\textwidth,
+      align=center
+    ] at (titlepos) {\booktitle};
+    \begin{scope}[white, line width=0.8pt]
+      \coordinate (linecenter) at ([yshift=-1.0cm]titlepos);
+      \draw ($(linecenter)+(-9em,0)$) -- ($(linecenter)+(-1.5em,0)$);
+      \draw ($(linecenter)+(9em,0)$) -- ($(linecenter)+(1.5em,0)$);
+      \node[rotate=45,draw,inner sep=2.5pt] at (linecenter) {};
+    \end{scope}
+    \node[
+      text=white,
+      font=\displayfont\Large\itshape,
+      text width=0.7\textwidth,
+      align=center
+    ] at ([yshift=-1.8cm]linecenter) {\booksubtitle};
+  \end{tikzpicture}
+\end{titlepage}
+
+\frontmatter
+\pagestyle{empty}
+\addchap*{Inhalt}
+\begin{multicols*}{2}
+  \printtoc
+\end{multicols*}
+
+\mainmatter
+\pagestyle{scrheadings}
+
+\include{chapters/01_vorwort}
+\include{chapters/02_grundmechanik}
+\include{chapters/03_charaktere}
+\include{chapters/04_marks}
+\include{chapters/05_ausruestung}
+\include{chapters/06_konflikte}
+\include{chapters/07_folgen_und_erholung}
+\include{chapters/08_magie_und_glaube}
+\include{chapters/09_fortschritt}
+\include{chapters/10_spielleitung}
+\include{chapters/11_glossar}
+
+\appendix
+\include{chapters/12_anhang_marks}
+\include{chapters/13_anhang_ausruestung}
+\include{chapters/14_anhang_zauber}
+\include{chapters/15_anhang_boegen}
+
+\end{document}

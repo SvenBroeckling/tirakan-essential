@@ -1,0 +1,304 @@
+\documentclass[10pt]{scrartcl}
+
+\usepackage[german]{babel}
+\usepackage{fontspec}
+\usepackage[a4paper,margin=9mm]{geometry}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\KOMAoptions{parskip=half}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+\raggedbottom
+\raggedcolumns
+
+\setmainfont{EBGaramond-Regular.ttf}[
+    Path=assets/fonts/,
+    BoldFont=EBGaramond-Bold.ttf,
+    ItalicFont=EBGaramond-Italic.ttf,
+    BoldItalicFont=EBGaramond-BoldItalic.ttf
+]
+\setsansfont{Metamorphous-Regular.ttf}[Path=assets/fonts/]
+\newfontfamily\displayfont{Metamorphous-Regular.ttf}[
+    Path=assets/fonts/,
+    BoldFont=Metamorphous-Regular.ttf,
+    BoldFeatures={FakeBold=1.5}
+]
+\setmonofont{Oxanium-Regular.ttf}[
+    Path=assets/fonts/,
+    BoldFont=Oxanium-Bold.ttf
+]
+
+\definecolor{primarytext}{RGB}{20,18,17}
+\definecolor{linkcolor}{RGB}{143,49,20}
+\definecolor{ruleaccent}{RGB}{84,33,20}
+\definecolor{boxline}{RGB}{82,62,52}
+\definecolor{boxfill}{RGB}{247,242,234}
+\definecolor{mutedfill}{RGB}{238,230,219}
+\color{primarytext}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    pdftitle={Tirakans Reiche Charakterbogen},
+    pdfauthor={OpenAI Codex}
+}
+
+\AddToShipoutPictureBG{%
+    \AtPageLowerLeft{%
+        \includegraphics[width=\paperwidth,height=\paperheight]{assets/images/tirakan-background.png}%
+    }%
+}
+
+\newcommand{\sheettitle}[1]{%
+        {\displayfont\fontsize{21pt}{24pt}\selectfont #1}
+}
+
+\newcommand{\panelheader}[1]{%
+    \noindent\colorbox{ruleaccent}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\color{white}\displayfont\large #1}}\par
+}
+
+\newcommand{\fieldwithheading}[2][1.2cm]{%
+    \parbox[t]{\linewidth}{%
+        \textbf{#2}\par
+        \vspace{0.22cm}
+        \rule{\linewidth}{0.4pt}\vspace{#1}%
+    }%
+}
+
+\newcommand{\fieldwithcheckboxes}[3][0pt]{%
+    \parbox[t]{\linewidth}{%
+        \textbf{#2}\hfill\trackboxes{#3}\vspace{#1}%
+    }%
+}
+
+\newcommand{\tinybox}[1]{%
+    \tikz[baseline=(b.base)]\node[
+        draw=boxline,
+        fill=white,
+        minimum width=1.0em,
+        minimum height=1.0em,
+        inner sep=0pt
+    ] (b) {\strut #1};
+}
+
+\newcommand{\trackboxes}[1]{%
+    \foreach \n in {0,...,\numexpr#1-1\relax}{%
+        \tinybox{\textcolor{boxline!55}{\fontsize{5.5pt}{5.5pt}\selectfont \n}}%
+    }%
+}
+
+\newenvironment{sheetpanel}[1]{%
+    \begin{tikzpicture}[baseline=(current bounding box.north)]
+    \node[
+        draw=boxline,
+        line width=0.8pt,
+        fill=boxfill,
+        rounded corners=3pt,
+        inner sep=6pt,
+        text width=\linewidth-2\fboxsep-2pt
+    ] (panel) \bgroup
+    \begin{minipage}{\linewidth}
+    \panelheader{#1}
+    \vspace{0.12cm}
+}{%
+    \end{minipage}
+    \egroup;
+    \end{tikzpicture}\par\vspace{0.18cm}
+}
+
+\begin{document}
+
+    \begin{center}
+        \sheettitle{Charakterbogen}\\[0.2cm]
+        {\displayfont\normalsize Tirakans Reiche}
+    \end{center}
+
+    \begin{sheetpanel}{Identität}
+
+        \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.31\linewidth} >{\raggedright\arraybackslash}p{0.19\linewidth} >{\raggedright\arraybackslash}p{0.19\linewidth} >{\raggedright\arraybackslash}p{0.22\linewidth}}
+\fieldwithheading[0.2cm]{Name} & \fieldwithheading[0.2cm]{Geburtsdatum} & \fieldwithheading[0.2cm]{Kampagne} & \fieldwithheading[0.2cm]{Spieler/in}
+        \end{tabularx}
+
+        \vspace{0.14cm}
+        \noindent\hspace{\tabcolsep}%
+        \parbox{\dimexpr\linewidth-2\tabcolsep\relax}{\fieldwithheading[0.2cm]{Konzeptsatz}}\par
+
+        \vspace{0.14cm}
+        \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.22\linewidth} >{\raggedright\arraybackslash}p{0.22\linewidth} >{\raggedright\arraybackslash}p{0.22\linewidth} >{\raggedright\arraybackslash}p{0.22\linewidth}}
+\fieldwithheading[0.2cm]{Abstammung} & \fieldwithheading[0.2cm]{Weg} & \fieldwithheading[0.2cm]{Bindung} & \fieldwithheading[0.2cm]{Mal}
+        \end{tabularx}
+
+        \vspace{0.14cm}
+        \noindent\hspace{\tabcolsep}%
+        \parbox{\dimexpr\linewidth-2\tabcolsep\relax}{\fieldwithheading[0.2cm]{Schuld oder Eid}}\par
+    \end{sheetpanel}
+
+    \begin{minipage}[t]{0.235\linewidth}
+        \begin{sheetpanel}{\tiny Initiative Target}
+            \rule{\linewidth}{0.4pt}\vspace{0.28cm}\par
+        \end{sheetpanel}
+    \end{minipage}\hfill%
+    \begin{minipage}[t]{0.235\linewidth}
+        \begin{sheetpanel}{\tiny Actions per Round}
+            \rule{\linewidth}{0.4pt}\vspace{0.28cm}\par
+        \end{sheetpanel}
+    \end{minipage}\hfill%
+    \begin{minipage}[t]{0.235\linewidth}
+        \begin{sheetpanel}{\tiny Omen}
+            \rule{\linewidth}{0.4pt}\vspace{0.28cm}\par
+        \end{sheetpanel}
+    \end{minipage}\hfill%
+    \begin{minipage}[t]{0.235\linewidth}
+        \begin{sheetpanel}{\tiny Zauberverstärkung}
+            \rule{\linewidth}{0.4pt}\vspace{0.28cm}\par
+        \end{sheetpanel}
+    \end{minipage}\hfill
+
+    \noindent\begin{minipage}[t]{0.48\linewidth}
+                 \begin{sheetpanel}{Leisten und Ressourcen}
+                     \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X}
+\fieldwithcheckboxes{Wunden}{8} \\[0.12cm]
+\fieldwithcheckboxes{Bürde}{8} \\[0.12cm]
+\fieldwithcheckboxes{Omen}{6} \\[0.12cm]
+\fieldwithcheckboxes{Arkana}{8} \\[0.12cm]
+\fieldwithcheckboxes{Gunst}{8} \\[0.12cm]
+\fieldwithcheckboxes{Verderbnis}{3}
+                     \end{tabularx}
+                 \end{sheetpanel}
+
+                 \begin{sheetpanel}{Attribute}
+                     \small
+                     \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X}
+\fieldwithcheckboxes{Geist}{4} \\[0.2cm]
+\fieldwithcheckboxes{Wille}{4} \\[0.2cm]
+\fieldwithcheckboxes{Instinkt}{4} \\[0.2cm]
+\fieldwithcheckboxes{Geschick}{4} \\[0.2cm]
+\fieldwithcheckboxes{Körper}{4} \\[0.2cm]
+\fieldwithcheckboxes{Erscheinung}{4}
+                     \end{tabularx}
+                     \normalsize
+                 \end{sheetpanel}
+    \end{minipage}\hfill%
+    \begin{minipage}[t]{0.48\linewidth}
+        \begin{sheetpanel}{Fertigkeiten}
+            \small
+            \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X}
+\fieldwithcheckboxes{Athletik}{3} \\[0.2cm]
+\fieldwithcheckboxes{Kampf}{3} \\[0.2cm]
+\fieldwithcheckboxes{Schießen}{3} \\[0.2cm]
+\fieldwithcheckboxes{Heimlichkeit}{3} \\[0.2cm]
+\fieldwithcheckboxes{Handwerk}{3} \\[0.2cm]
+\fieldwithcheckboxes{Heilen}{3} \\[0.2cm]
+\fieldwithcheckboxes{Wahrnehmung}{3} \\[0.2cm]
+\fieldwithcheckboxes{Mythen}{3} \\[0.2cm]
+\fieldwithcheckboxes{Einfluss}{3} \\[0.2cm]
+\fieldwithcheckboxes{Standhaftigkeit}{3} \\[0.2cm]
+\fieldwithcheckboxes{Zauberei}{3} \\[0.2cm]
+\fieldwithcheckboxes{Ritus}{3} \\[0.2cm]
+\fieldwithcheckboxes{Magiekunde}{3}
+            \end{tabularx}
+            \normalsize
+        \end{sheetpanel}
+    \end{minipage}
+
+    \begin{sheetpanel}{Kurzreferenz}
+        \begin{multicols}{2}
+            \small
+            \textbf{Probe:}
+            \begin{itemize}[leftmargin=*,nosep]
+\item Zielwert = 30 + Attribut x 10 + Fertigkeit x 10 + Modifikatoren
+\item Zielwert auf 5 bis 95 begrenzen
+\item Erfolg bei W100 $\leq$ Zielwert
+\item Kritischer Erfolg bei 01--05, wenn der Wurf gelingt
+\item Katastrophe bei 96--00, wenn der Wurf scheitert
+            \end{itemize}
+
+            \columnbreak
+            \textbf{Startwerte:}
+            \begin{itemize}[leftmargin=*,nosep]
+\item Wundschwelle = 3 + Körper
+\item Bürdenschwelle = 5 + $\lfloor$Wille / 2$\rfloor$
+\item Initiative Zielwurf = 30 + Geschick x 10 + Wahrnehmung x 10
+\item Omen = 2 + $\lfloor$Glaubensniveau / 2$\rfloor$
+\item Arkana = 3 + Geist
+\item Gunst = 3 + Wille
+            \end{itemize}
+            \normalsize
+        \end{multicols}
+    \end{sheetpanel}
+
+    \newpage
+
+    \begin{center}
+        \sheettitle{Charakterbogen}\\[0.05cm]
+        {\displayfont\normalsize Bogen für Ausrüstung, Prägungen und übernatürliche Praxis}
+    \end{center}
+
+    \begin{minipage}[t]{0.48\linewidth}
+        \begin{sheetpanel}{Prägungen}
+            \noindent\fieldwithheading[0.6cm]{Abstammung Vorteil}\par
+            \vspace{0.1cm}
+            \noindent\fieldwithheading[0.6cm]{Abstammung Verwundbarkeit}\par
+            \vspace{0.1cm}
+            \noindent\fieldwithheading[0.6cm]{Weg Vorteil}\par
+            \vspace{0.1cm}
+            \noindent\fieldwithheading[0.6cm]{Weg Verwundbarkeit}\par
+            \vspace{0.1cm}
+            \noindent\fieldwithheading[0.6cm]{Bindung Vorteil}\par
+            \vspace{0.1cm}
+            \noindent\fieldwithheading[0.6cm]{Bindung Verwundbarkeit}\par
+            \vspace{0.1cm}
+            \noindent\fieldwithheading[0.6cm]{Mal Effekt}\par
+        \end{sheetpanel}
+
+        \begin{sheetpanel}{Waffen und Rüstung}
+            \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.34\linewidth} >{\centering\arraybackslash}p{0.10\linewidth} >{\centering\arraybackslash}p{0.10\linewidth} >{\centering\arraybackslash}p{0.10\linewidth} X}
+\textbf{Waffe} & \textbf{S} & \textbf{G} & \textbf{R} & \textbf{Eig.} \\
+\rule{\linewidth}{0.4pt}\vspace{0.45cm} & \rule{\linewidth}{0.4pt}\vspace{0.45cm} & \rule{\linewidth}{0.4pt}\vspace{0.45cm} & \rule{\linewidth}{0.4pt}\vspace{0.45cm} & \rule{\linewidth}{0.4pt}\vspace{0.45cm} \\
+\rule{\linewidth}{0.4pt}\vspace{0.45cm} & \rule{\linewidth}{0.4pt}\vspace{0.45cm} & \rule{\linewidth}{0.4pt}\vspace{0.45cm} & \rule{\linewidth}{0.4pt}\vspace{0.45cm} & \rule{\linewidth}{0.4pt}\vspace{0.45cm}
+            \end{tabularx}
+            \vspace{0.3cm}
+            \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.34\linewidth} >{\centering\arraybackslash}p{0.10\linewidth} >{\centering\arraybackslash}p{0.10\linewidth} >{\centering\arraybackslash}p{0.10\linewidth} X}
+\textbf{Rüstung} & \textbf{S} & \textbf{L} & \textbf{V} & \textbf{Eig.} \\
+\rule{\linewidth}{0.4pt}\vspace{0.45cm} & \rule{\linewidth}{0.4pt}\vspace{0.45cm} & \rule{\linewidth}{0.4pt}\vspace{0.45cm} & \rule{\linewidth}{0.4pt}\vspace{0.45cm} & \rule{\linewidth}{0.4pt}\vspace{0.45cm}
+            \end{tabularx}
+            \vspace{0.3cm}
+            \noindent\fieldwithheading[0.75cm]{Schilde, Munition, Gebrauchsgegenstande}\par
+        \end{sheetpanel}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}
+        \begin{sheetpanel}{Zauberei und Glaube}
+            \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.42\linewidth} X}
+\textbf{Glaubensniveau} & \rule{\linewidth}{0.4pt}\vspace{0.6cm} \\
+\textbf{Magieniveau} & \rule{\linewidth}{0.4pt}\vspace{0.6cm} \\
+            \end{tabularx}
+            \noindent\fieldwithheading[0.6cm]{Gewahlte Schule 1}\par
+            \vspace{0.1cm}
+            \noindent\fieldwithheading[0.6cm]{Gewahlte Schule 2}\par
+            \vspace{0.18cm}
+            \noindent\fieldwithheading[1.0cm]{Bekannte Zauber / Rituale}\par
+            \vspace{0.18cm}
+            \noindent\fieldwithheading[0.8cm]{Petitionen, Opfer, Zeugen}\par
+        \end{sheetpanel}
+
+        \begin{sheetpanel}{Zustande, Male, Notizen}
+            \noindent\fieldwithheading[0.8cm]{Aktive Zustande und Folgen}\par
+            \vspace{0.12cm}
+            \noindent\fieldwithheading[0.8cm]{Breaking Points / Erholungsnotizen}\par
+            \vspace{0.12cm}
+            \noindent\fieldwithheading[1.45cm]{Freie Notizen}\par
+        \end{sheetpanel}
+    \end{minipage}
+
+\end{document}
