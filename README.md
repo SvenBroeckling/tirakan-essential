@@ -4,8 +4,8 @@ Dieses Repository enthält die LaTeX Quellen für das Tirakan Essential Regelbuc
 
 ## Dateien
 
-- `main.tex`: Einstieg fur den Satz
-- `chapters/`: manuell geschriebene Hauptkapitel inklusive fixer Anhangskapitel
+- `main.tex`: Einstieg für den Satz
+- `chapters/`: Hauptkapitel inklusive Anhangskapitel
 
 ## Erzeugen
 
@@ -26,4 +26,4 @@ lualatex main.tex
 lualatex main.tex
 ```
 
-Die zweite LaTeX-Runde ist fur Inhaltsverzeichnis und Referenzen notig.
+Die zweite LaTeX-Runde ist für Inhaltsverzeichnis und Referenzen nötig.
