@@ -1,5 +1,8 @@
 .texlive-cache
 .idea
+*.idx
+*.ilg
+*.ind
 *.aux
 *.pdf
 *.log

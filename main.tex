@@ -25,6 +25,8 @@
 \usepackage{scrlayer-scrpage}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{makeidx}
+\makeindex
 
 \geometry{left=3cm,right=3cm,top=3.5cm,bottom=3.5cm}
 \setcounter{secnumdepth}{0}
@@ -221,5 +223,10 @@
 \include{chapters/13_anhang_ausruestung}
 \include{chapters/14_anhang_zauber}
 \include{chapters/15_anhang_boegen}
+
+\backmatter
+\clearpage
+\addchap{Index}
+\printindex
 
 \end{document}
