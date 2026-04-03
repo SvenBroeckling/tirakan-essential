@@ -165,26 +165,30 @@
     \node[
       text=white,
       font=\displayfont\bfseries\fontsize{42}{48}\selectfont,
-      text width=0.82\textwidth,
       align=center
-    ] at (titlepos) {\booktitle};
+    ] at ([yshift=0.85cm]titlepos) {Tirakans};
     \begin{scope}[white, line width=0.8pt]
-      \coordinate (linecenter) at ([yshift=-1.0cm]titlepos);
+      \coordinate (linecenter) at (titlepos);
       \draw ($(linecenter)+(-9em,0)$) -- ($(linecenter)+(-1.5em,0)$);
       \draw ($(linecenter)+(9em,0)$) -- ($(linecenter)+(1.5em,0)$);
       \node[rotate=45,draw,inner sep=2.5pt] at (linecenter) {};
     \end{scope}
     \node[
       text=white,
+      font=\displayfont\bfseries\fontsize{42}{48}\selectfont,
+      align=center
+    ] at ([yshift=-0.85cm]linecenter) {Reiche};
+    \node[
+      text=white,
       font=\displayfont\Large\itshape,
       text width=0.7\textwidth,
       align=center
-    ] at ([yshift=-1.8cm]linecenter) {\booksubtitle};
+    ] at ([yshift=-2.8cm]linecenter) {\booksubtitle};
     \node[
       text=white,
       font=\displayfont\large\selectfont,
       align=center
-    ] at ([yshift=-3.0cm]linecenter) {Version \tirakanversion};
+    ] at ([yshift=-4.0cm]linecenter) {Version \tirakanversion};
   \end{tikzpicture}
 \end{titlepage}
 
