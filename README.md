@@ -22,8 +22,14 @@ Nur Build-Artefakte entfernen:
 Oder von Hand:
 
 ```bash
+lualatex sheet.tex
+lualatex sheet.tex
 lualatex main.tex
 lualatex main.tex
 ```
 
 Die zweite LaTeX-Runde ist für Inhaltsverzeichnis und Referenzen nötig.
+
+## Lizenz
+
+Dieses Regelbuch ist unter der [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) Lizenz lizenziert.
