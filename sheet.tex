@@ -45,13 +45,15 @@
 \definecolor{boxfill}{RGB}{247,242,234}
 \definecolor{mutedfill}{RGB}{238,230,219}
 \color{primarytext}
+\input{version.tex}
 
 \hypersetup{
     colorlinks=true,
     linkcolor=linkcolor,
     urlcolor=linkcolor,
     pdftitle={Tirakans Reiche Charakterbogen},
-    pdfauthor={OpenAI Codex}
+    pdfauthor={OpenAI Codex},
+    pdfsubject={Version \tirakanversion}
 }
 
 \AddToShipoutPictureBG{%
@@ -121,7 +123,8 @@
 
     \begin{center}
         \sheettitle{Charakterbogen}\\[0.2cm]
-        {\displayfont\normalsize Tirakans Reiche}
+        {\displayfont\normalsize Tirakans Reiche}\\[0.08cm]
+        {\small Version \tirakanversion}
     \end{center}
 
     \begin{sheetpanel}{Identität}

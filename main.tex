@@ -54,13 +54,15 @@
 \definecolor{linkcolor}{RGB}{143,49,20}
 \definecolor{ruleaccent}{RGB}{84,33,20}
 \color{primarytext}
+\input{version.tex}
 
 \hypersetup{
   colorlinks=true,
   linkcolor=linkcolor,
   urlcolor=linkcolor,
   pdftitle={Tirakans Reiche Regelbuch},
-  pdfauthor={OpenAI Codex}
+  pdfauthor={OpenAI Codex},
+  pdfsubject={Version \tirakanversion}
 }
 
 \AddToShipoutPictureBG{%
@@ -178,6 +180,11 @@
       text width=0.7\textwidth,
       align=center
     ] at ([yshift=-1.8cm]linecenter) {\booksubtitle};
+    \node[
+      text=white,
+      font=\displayfont\large\selectfont,
+      align=center
+    ] at ([yshift=-3.0cm]linecenter) {Version \tirakanversion};
   \end{tikzpicture}
 \end{titlepage}
 
