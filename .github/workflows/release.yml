@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - .github/workflows/release.yml
-      - version.tex
   workflow_dispatch:
 
 permissions:
@@ -31,38 +28,34 @@ jobs:
             echo "Could not read version from version.tex" >&2
             exit 1
           fi
+          if [[ ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Version '$version' from version.tex is not in x.y.z format" >&2
+            exit 1
+          fi
           echo "value=$version" >> "$GITHUB_OUTPUT"
 
-      - name: Check whether version increased
-        id: gate
+      - name: Check whether version.tex changed
+        id: version_file
         shell: bash
         run: |
-          git fetch --tags --force
-          current="${{ steps.version.outputs.value }}"
-          latest_tag="$(git tag --list 'v*' --sort=-version:refname | head -n 1)"
-          latest="${latest_tag#v}"
-
-          if [[ -z "$latest_tag" ]]; then
-            echo "should_release=true" >> "$GITHUB_OUTPUT"
-            echo "latest_tag=" >> "$GITHUB_OUTPUT"
+          before="${{ github.event.before }}"
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          highest="$(printf '%s\n%s\n' "$latest" "$current" | sort -V | tail -n 1)"
-          if [[ "$highest" == "$current" && "$current" != "$latest" ]]; then
-            echo "should_release=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "should_release=false" >> "$GITHUB_OUTPUT"
+          if [[ "$before" == "0000000000000000000000000000000000000000" ]]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
-          echo "latest_tag=$latest_tag" >> "$GITHUB_OUTPUT"
 
-      - name: Stop when version did not increase
-        if: steps.gate.outputs.should_release != 'true'
-        shell: bash
-        run: echo "Version ${{ steps.version.outputs.value }} does not exceed latest release ${{ steps.gate.outputs.latest_tag }}."
+          if git diff --name-only "$before" "${{ github.sha }}" | grep -qx 'version.tex'; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Build sheet.tex pass 1
-        if: steps.gate.outputs.should_release == 'true'
         uses: xu-cheng/latex-action@v3
         with:
           root_file: sheet.tex
@@ -70,7 +63,6 @@ jobs:
           args: -interaction=nonstopmode -halt-on-error
 
       - name: Build sheet.tex pass 2
-        if: steps.gate.outputs.should_release == 'true'
         uses: xu-cheng/latex-action@v3
         with:
           root_file: sheet.tex
@@ -78,7 +70,6 @@ jobs:
           args: -interaction=nonstopmode -halt-on-error
 
       - name: Build main.tex pass 1
-        if: steps.gate.outputs.should_release == 'true'
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
@@ -86,7 +77,6 @@ jobs:
           args: -interaction=nonstopmode -halt-on-error
 
       - name: Build main.tex pass 2
-        if: steps.gate.outputs.should_release == 'true'
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
@@ -94,7 +84,6 @@ jobs:
           args: -interaction=nonstopmode -halt-on-error
 
       - name: Upload build artifacts
-        if: steps.gate.outputs.should_release == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: tirakan-essential-pdfs-v${{ steps.version.outputs.value }}
@@ -104,7 +93,7 @@ jobs:
           if-no-files-found: error
 
       - name: Create GitHub release
-        if: steps.gate.outputs.should_release == 'true'
+        if: steps.version_file.outputs.changed == 'true'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.version.outputs.value }}
