@@ -1,116 +1,128 @@
-\worldchapter{Konflikte und Kampf}{combat}
+\worldchapter{Konflikte}{combat}
 \label{ch:konflikte}
 
 \begin{multicols*}{2}
 
-\section{Kampfaufbau}\label{sec:kampfaufbau}
+\section{Beginn des Konflikts}\label{sec:konflikt-beginn}\index{Konflikt}
 
-Zu Beginn eines \textbf{Konflikts}\index{Konflikt}:
-\begin{enumerate}[leftmargin=*]
-\item eine grobe Karte oder Zonenstruktur festlegen
-\item Distanzsegmente zwischen Gruppen bestimmen
-\item Initiative testen: Deftness + Perception
-\item aktuelle Actions notieren
-\end{enumerate}
+Kommt es zu einem Konflikt, so verläuft die Zeit in Runden.
+Zu Beginn des Konflikts wird eine grobe Karte gezeichnet, die eine Zonenstruktur enthält.
+Distanzsegmente werden zwischen den Zonen und Gruppen festgelegt.
+Dann wirft jeder Teilnehmer auf seine \textbf{Initiative} und alle Spielercharaktere auf ihre \textbf{Schnellreaktionen}.
 
-\section{Actions pro Runde}\label{sec:actions-pro-runde}
-Standard ist \textbf{2 Actions}\index{Action} pro Runde.
-Zusatzliche Actions gibt es nur durch ausdruckliche Regeln.
+Alle Teilnehmer beginnen den Konflikt mit \textbf{0 Aktionen}, es sei denn, ihnen gelingt die Probe auf eine Schnellreaktion.
+
+\subsection{Initiative}\label{subsec:initiative}\index{Initiative}
+
+Die Initiative bestimmt die Handlungsreihenfolge im Konflikt.
+Hierzu wird eine Probe auf den Initiative-Zielwert abgelegt (\textbf{30} + \textbf{Geschick} + \textbf{Wahrnehmung}).
+Die Teilnehmer handeln in der Reihenfolge der Punkte, die sie unter oder über ihrem Inititative-Wert geworfen haben.
+
+\subsection{Schnellreaktion}\label{subsec:schnellreaktion}\index{Schnellreaktion}
+
+Die Schnellreaktion ermöglicht es Spielercharakteren, eine Reaktion zu Beginn des Konflikts zu erhalten, um auf eventuelle Angriffe reagieren zu können.
+Hierzu werfen die Spieler auf \textbf{Schnellreaktion}\index{Schnellreaktion}: \textbf{30} + \textbf{Instinkt} + \textbf{Wahrnehmung}.
+
+Ist der Wurf erfolgreich, so erhält der Charakter eine Aktion zu Beginn des Konflikts, die ausschließlich als Reaktion eingesetzt werden kann.
+
+\section{Aktionen pro Runde}\label{sec:aktionen-pro-runde}\index{Aktion}
+
+Jeder Teilnehmer am Konflikt hat \textbf{2 Aktionen}\index{Aktion} pro Konfliktrunde.
 
 \section{Rundenablauf}\label{sec:rundenablauf}
+
+Jede Konfliktrunde hat ein Start- und ein Endfenster, in denen besondere Aktionen geschehen können.
+Dazwischen handeln alle Charaktere in der Reihenfolge ihrer Initiative.
+
+Kommt ein Charakter an die Reihe, so frischen sich seine Aktionen auf das Maximum auf.
+Gehaltene Aktionen verfallen dabei.
+
 \begin{enumerate}[leftmargin=*]
 \item Startfenster der Runde
-\item in Initiativreihenfolge: Actions auf Maximalwert auffrischen, dann ausgeben oder halten
+\item in Initiativreihenfolge: Aktionen auf Maximalwert auffrischen, dann ausgeben oder halten
 \item Endfenster der Runde
-\item nächste Runde
 \end{enumerate}
 
-Gehaltene Actions verfallen beim nächsten eigenen Refresh.
+\section{Reaktionen}\label{sec:reaktionen}\index{Reaktion}
 
-\section{Reaktionen}\label{sec:reaktionen}
-Eine \textbf{Reaktion}\index{Reaktion} ist erlaubt, wenn alles zugleich zutrifft:
-\begin{itemize}[leftmargin=*]
-\item der Charakter nimmt den Auslöser direkt wahr
-\item sie hat mindestens 1 ungenutzte Action
-\item sie hat eine passende Reaktion dazu erklärt
-\end{itemize}
+Im Konflikt ist es möglich, Aktionen zu halten, um später in der Kampfrunde zu handeln und auf Gegner zu reagieren.
+Dies ist möglich, wenn der Charakter noch mindestens eine freie Aktion übrig hat und den Handelnden direkt wahrnehmen kann.
 
-Die Reaktion wird angesagt, sobald der Auslöser klar ist, und wird fiktional abgehandelt, bevor der auslösende Effekt landet.
+Für jeden Auslöser darf jeder Charakter einmal reagieren.
+Es dürfen alle Charaktere reagieren, die die auslösende Handlung direkt wahrnehmen.
+Reagieren mehrere Charaktere gleichzeitig, wird in Initiativreihenfolge aufgelöst.
 
-Zusatzlich gilt:
-\begin{itemize}[leftmargin=*]
-\item pro Auslöser darf jeder Charakter höchstens einmal reagieren
-\item beliebig viele verschiedene Charaktere dürfen auf denselben Auslöser reagieren
-\item reagieren mehrere Charaktere zugleich, wird in Initiativreihenfolge aufgelöst
-\end{itemize}
+Die Reaktion wird angesagt, sobald der Auslöser klar ist.
+Sie wird vor der auslösenden Handlung abgehandelt.
 
-\section{Quick Reaction}\label{sec:quick-reaction}
-Direkt vor Runde 1 testet jeder beteiligte Charakter \textbf{Quick Reaction}\index{Quick Reaction}: Instinct + Perception.
-\begin{itemize}[leftmargin=*]
-\item Erfolg: eine einmalige Reaktions-Action vor dem ersten eigenen Zug
-\item Misserfolg: keine Vorab-Reaktion
-\end{itemize}
+\section{Aktionen}\label{sec:aktionsliste}\index{Aktion}
 
-\section{Aktionsliste}\label{sec:aktionsliste}
-Sofern nicht anders angegeben, kostet jede Aktion 1 Action.
+Aktionen können verwendet werden, um Handlungen auszuführen oder sich über Distanzen zu bewegen.
+Die Bewegung innerhalb eines Distanzsegments benötigt keine Aktion.
+
+Mögliche Aktionen in der eigenen Konfliktrunde sind:
+
 \begin{description}[style=nextline,leftmargin=0pt]
-\item[\textbf{Strike}] Nahkampfangriff
-\item[\textbf{Shoot}] Fernkampfangriff
-\item[\textbf{Move}] 1 Distanzsegment verschieben
-\item[\textbf{Sprint}] bis zu 2 Bänder, danach -10 auf den nächsten Test der Runde
-\item[\textbf{Take Cover}] bis zum Verlassen der Deckung +10 auf Reaktionen gegen Fernangriffe
-\item[\textbf{Aim/Set}] der nachste Strike oder Shoot erhalt +10
-\item[\textbf{Use Item}] Werkzeug, Verbrauchsgut, Nachladen, Mechanismus
-\item[\textbf{Cast Fast}] ein nicht-rituelles Wirken
-\item[\textbf{Assist}] eine nahe Verbundete erhalt +10 auf ihren unmittelbaren Test
-\item[\textbf{Withdraw}] Engagement verlassen, ohne einen Parting Strike auszulosen
-\item[\textbf{Recover}] Shaken entfernen oder auf einen Dying-Verbundeten Stabilize versuchen
+\item[\textbf{Angreifen}] Nahkampfangriff
+\item[\textbf{Schießen}] Fernkampfangriff
+\item[\textbf{Bewegen}] 1 Distanzsegment bewegen
+\item[\textbf{Sprinten}] bis zu 2 Distanzsegmente bewegen, danach -10 auf den nächsten Test der Runde
+\item[\textbf{Deckung suchen}] bis zum Verlassen der Deckung +10 auf Reaktionen gegen Fernangriffe
+\item[\textbf{Zielen}] der nächste Angriff erhält +10
+\item[\textbf{Gegenstand benutzen}] Werkzeug, Verbrauchsgut, Nachladen, Mechanismus
+\item[\textbf{Zaubern}] Zauber wirken, die keine Rituale sind
+\item[\textbf{Unterstützen}] ein naher Verbündeter erhält +10 auf seine unmittelbare Probe
+\item[\textbf{Zurückziehen}] Nahkampfbindung verlassen, ohne einen Gelegenheitsangriff auszulosen
+\item[\textbf{Sich fassen}] Erschüttert entfernen oder einen sterbenden Verbündeten stabilisieren
 \end{description}
 
-Plausible Sonderaktionen sind erlaubt.
-Standardkosten sind 1, bei klar komplexen Vorgangen 2 Actions.
+\section{Bewegung im Konflikt}\label{sec:distanzsegmente}\index{Bewegung}\index{Distanzsegment}
 
-\section{Distanzsegmente}\label{sec:distanzsegmente}
-Es gibt vier relative \textbf{Distanzsegmente}\index{Distanzsegment}:
+Bewegung und Distanz wird durch \textbf{Distanzsegmente} dargestellt.
+Ein Distanzsegment sind keine Meterangaben, sondern Entfernungskategorien zwischen Charakteren oder Gruppen.
+
+Es gibt vier \textbf{Distanzsegmente}:
+
 \begin{itemize}[leftmargin=*]
-\item \textbf{Engaged}
-\item \textbf{Near}
-\item \textbf{Far}
-\item \textbf{Distant}
+\item \textbf{Gebunden} – im Nahkampf mit einem Teilnehmer gebunden
+\item \textbf{Nah} – innerhalb eines Raums oder einer begrenzten Fläche
+\item \textbf{Fern} – im nächsten Raum, jenseits des Weges
+\item \textbf{Weit entfernt} – weiter entfernt vom Geschehen
 \end{itemize}
 
-Sie sind keine Meterangaben, sondern taktische Kategorien zwischen Charakteren oder Gruppen.
+Bei Bewegung und der Bewertung von Distanzsegmenten gelten folgende Regeln:
 
-Wichtige Regeln:
 \begin{itemize}[leftmargin=*]
-\item \textbf{Move} verschiebt 1 Band.
-\item \textbf{Sprint} verschiebt bis zu 2 Bändern.
-\item Der Sprung von nicht \textbf{Engaged} zu \textbf{Engaged} bedeutet tatsachlichen Kontakt.
-\item Umpositionierung im selben Band ist frei, solange daraus kein deutlicher mechanischer Vorteil entsteht.
-\item Falls Deckung, Flanke, Blocker oder Gefahr überwunden werden, kostet dieselbe Umpositionierung \textbf{Move} oder \textbf{Sprint}.
+\item \textbf{Bewegen} verschiebt 1 Distanzsegment.
+\item \textbf{Sprinten} verschiebt bis zu 2 Distanzsegmente.
+\item Der Wechsel von nicht \textbf{Gebunden} zu \textbf{Gebunden} bedeutet tatsächlichen Kontakt zu einem Gegner.
+\item Umpositionierung im selben Distanzsegment ist frei, solange daraus kein deutlicher mechanischer Vorteil entsteht.
+\item Falls Deckung, Flanke, Blocker oder Gefahr überwunden werden, erfordert dieselbe Umpositionierung \textbf{Bewegen} oder \textbf{Sprinten}.
 \end{itemize}
 
 Faustregeln für Innenräume:
+
 \begin{itemize}[leftmargin=*]
-\item in den Nachbarraum oder durch eine offene Verbindung wechseln: meist 1 Band
-\item in einen getrennten Raum, ein anderes Stockwerk oder hinter mehrere Sichtblocker wechseln: meist 2 Bänder
+\item in den Nachbarraum oder durch eine offene Verbindung wechseln: meist 1 Distanzsegment
+\item in einen getrennten Raum, ein anderes Stockwerk oder hinter mehrere Sichtblocker wechseln: meist 2 Distanzsegmente
 \end{itemize}
 
-\section{Angriff auflösen}\label{sec:angriff-auflosen}
+\section{Angriff abhandeln}\label{sec:angriff-auflosen}\index{Angriff}
 
-\subsection{Angreifer}\label{subsec:angreifer}
+Um einen Angriff durchzuführen, wirft der Angreifer eine passende Probe.
+
 \begin{itemize}[leftmargin=*]
-\item Nahkampf: Body + Combat
-\item Fernkampf: Deftness + Shooting
+\item Nahkampf: \textbf{30} + \textbf{Körper} + \textbf{Kampf}
+\item Fernkampf: \textbf{30} + \textbf{Geschick} + \textbf{Schießen}
 \end{itemize}
 
-\subsection{Verteidiger}\label{subsec:verteidiger}
-Der Verteidiger kann reagieren mit:
+Wenn der Verteidiger eine Aktion übrig hat, kann er mit folgenden Aktionen reagieren.
+
 \begin{itemize}[leftmargin=*]
-\item \textbf{Parry}: Instinct + Combat
-\item \textbf{Evade}: Deftness + Athletics
-\item \textbf{Guard}: Schildbonus
-\item \textbf{Take hit}: keine Reaktion
+\item \textbf{Parieren}: \textbf{30} + \textbf{Instinkt} + \textbf{Kampf}
+\item \textbf{Ausweichen}: \textbf{30} + \textbf{Geschick} + \textbf{Athletik}
+\item \textbf{Blocken}: Schildbonus
+\item \textbf{Treffer hinnehmen}: keine Reaktion
 \end{itemize}
 
 \subsection{Treffer und Schaden}\label{subsec:treffer-und-schaden}
@@ -121,19 +133,19 @@ Der Verteidiger kann reagieren mit:
 \item Gewinnt der Angreifer knapp: Grundschaden.
 \item Gewinnt der Angreifer sauber oder stark: Grundschaden +1.
 \item Ist der gewinnende Treffer kritisch: zusätzlich +1 Schaden.
-\item Danach Rustung einmal anwenden.
+\item Danach Rüstung einmal anwenden.
 \end{itemize}
 
-\section{Parting Strike}\label{sec:parting-strike}
-Wenn jemand \textbf{Engagement}\index{Engaged} ohne \textbf{Withdraw} verlässt, darf ein gebundener Gegner sofort einen freien \textbf{Parting Strike}\index{Parting Strike} ausführen.
+\section{Gelegenheitsangriff}\label{sec:parting-strike}\index{Gelegenheitsangriff}
 
-\section{Zustandsverteilung im Kampf}\label{sec:zustandsverteilung-im-kampf}
-Waffen, Consequences, Feuer, Gift oder spezielle Effekte können Zustände auslösen. Ihre Regeln stehen gesammelt in \cref{ch:folgen}.
+Wenn jemand eine \textbf{Nahkampfbindung}\index{Nahkampfbindung} ohne \textbf{Zurückziehen} verlässt, darf ein gebundener Gegner sofort einen freien \textbf{Gelegenheitsangriff} ausführen.
 
-\begin{ruleexample}
-Eine Speerträgerin hält 1 Action zurück.
-Ein Gegner stürmt aus \textbf{Near} in \textbf{Engaged}.
-Wegen \textbf{Reach} darf sie zuerst zuschlagen.
-Hat sie zuvor \textbf{Aim/Set} genutzt, gibt es gegen genau diesen Eintritt zusätzlich +1 Schaden.
-\end{ruleexample}
+Der Gelegenheitsangriff kostet keine Aktion, es ist eine freie Handlung.
+
+\section{Zustandsverteilung im Konflikt}\label{sec:zustandsverteilung-im-kampf}
+
+Waffen, Konsequenzen, Feuer, Gift oder spezielle Effekte können Zustände auslösen.
+Das ist der Fall, wenn es explizit bei einer Waffe oder einem Effekt angegeben ist.
+Ihre Regeln stehen gesammelt in \cref{ch:folgen}.
+
 \end{multicols*}
