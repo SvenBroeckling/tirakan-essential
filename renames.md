@@ -18,4 +18,6 @@ Far -> Fern
 Distant -> Weit entfernt
 Withdraw -> Zurückziehen
 Recover -> Sich fassen
+Wound Threshold -> Wundschwelle
+Burden Threshold -> Bürdeschwelle
 

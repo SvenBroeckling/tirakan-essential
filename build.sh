@@ -20,7 +20,7 @@ build() {
     lualatex main.tex
     makeindex main.idx
     lualatex main.tex
-    evince main.pdf &
+    atril main.pdf &
 }
 
 action="${1:-build}"

@@ -1,103 +1,125 @@
-\worldchapter{Folgen und Erholung}{wounds}
-\label{ch:folgen}
+\worldchapter{Wunden und Erholung}{wounds}
+\label{ch:wunden}
 
 \begin{multicols*}{2}
-\section{Wounds}
-\textbf{Wounds}\index{Wounds} messen körperliche Verletzung. Schaden wird als Wounds markiert.
+\section{Wunden}\label{sec:wunden}\index{Wunde}\index{Wundengrenze}
+
+\textbf{Wunden} stellen körperliche Verletzungen dar.
+Jeglicher Schaden wird als Wunde festgehalten.
+
+Die Wundschwelle eines Charakters gibt an, ab welcher Anzahl an Wunden er als \textbf{Sterbend} gilt.
 
 \[
-\text{Wound Threshold} = 3 + \text{Body}
+\text{Wundschwelle} = 3 + \text{Körper}
 \]
 
-Es gilt stets nur die hochste aktuelle Wundstufe:
-\begin{description}[style=nextline,leftmargin=0pt]
-\item[\textbf{Hurt} (1+)] der erste körperliche Test jeder Runde ist -10
-\item[\textbf{Impaired} (3+)] alle körperlichen Tests -10, kein Sprint
-\item[\textbf{Critical} (5+)] alle Tests -20, beim Zug 1 Action weniger auffrischen, Minimum 1
-\item[\textbf{Dying} (> Threshold)] am Ende jedes eigenen Zuges +1 Wound
-\end{description}
-
-Wenn die Wounds Threshold + 3 übersteigen, stirbt der Charakter.
-
-\section{Stabilize}
-Eine nahe oder gebundene Verbundete kann \textbf{Stabilize} als 1 Action versuchen:
-\[
-Mind oder Will + Healing
-\]
-
-Bei jedem Erfolg:
-\begin{itemize}[leftmargin=*]
-\item Wounds exakt auf Threshold setzen
-\item \textbf{Dying} endet
-\item \textbf{Bleeding} endet
-\item der Charakter bleibt hilflos und handelt erst wieder nach einer Breather oder Full Rest
-\end{itemize}
-
-Bei knappem oder klarem Misserfolg: keine Änderung.\\
-Bei schwerem oder katastrophalem Misserfolg: keine Änderung und sofort +1 Wound.
-
-\section{Burden}
-\textbf{Burden}\index{Burden} sammelt Stress, Erschöpfung, Schuld, moralischen Druck und Korruptionslast.
-
-\[
-\text{Burden Limit} = 5 + \lfloor \text{Will} / 2 \rfloor
-\]
+Es gilt stets nur die höchste aktuelle Wundstufe:
 
 \begin{description}[style=nextline,leftmargin=0pt]
-\item[\textbf{Stable}] 0--2
-\item[\textbf{Strained}] 3 bis Limit - 1
-\item[\textbf{Breaking Point}]\index{Breaking Point} exakt Limit
+\item[\textbf{Verletzt} (1+)] die erste körperliche Probe jeder Runde ist -10
+\item[\textbf{Beeinträchtigt} (3+)] alle körperlichen Proben -10, kein Sprint
+\item[\textbf{Kritisch} (5+)] alle Proben -20, beim Zug 1 Aktion weniger auffrischen, Minimum 1
+\item[\textbf{Sterbend} (> Threshold)] am Ende jedes eigenen Zuges +1 Wunde
 \end{description}
 
-Am Breaking Point wird entweder sofort eine neue Scar genommen oder der Charakter bricht zusammen und verliert beim nächsten Refresh 1 Action.
+Wenn die Wunden die Wundschwelle um 3 übersteigen, stirbt der Charakter.
 
-\section{Corruption}
-\textbf{Corruption}\index{Corruption} ist die Langzeitfolge verbotener Praxis.
+\section{Stabilisieren}\label{sec:stabilisieren}\index{Stabilisieren}
+
+Ein naher oder gebundener Verbündeter kann \textbf{Stabilisieren} als Aktion versuchen:
+
+\[
+30 + \text{Geist oder Wille} + \text{Heilen}
+\]
+
+Bei Erfolg wird die Anzahl der Wunden exakt auf die Wundschwelle gesetzt.
+\textbf{Sterbend} und \textbf{Blutend} werden beendet.
+
+Bei knappem oder klarem Misserfolg: keine Änderung.
+
+Bei schwerem oder katastrophalem Misserfolg: keine Änderung und sofort +1 Wunde.
+
+\section{Bürde}\label{sec:burde}\index{Bürde}
+
+\textbf{Bürde} sammelt Stress, Erschöpfung, Schuld, moralischen Druck und Verderbnislast.
+Die Bürdenschwelle verdeutlicht, wie viel Last ein Charakter aushalten kann.
+
+\[
+\text{Bürdenschwelle} = 5 + \lfloor \text{Wille} / 2 \rfloor
+\]
+
+\begin{description}[style=nextline,leftmargin=0pt]
+\item[\textbf{Stabil}] 0--2
+\item[\textbf{Belastet}] 3 bis Bürdenschwelle - 1
+\item[\textbf{Wendepunkt}]\index{Wendepunkt} exakt Bürdenschwelle
+\end{description}
+
+Am Wendepunkt wird entweder sofort ein neues Mal genommen oder der Charakter bricht zusammen und verliert für den aktuellen Kampf eine Aktion pro Kampfrunde.
+
+\section{Verderbnis}\label{sec:verderbnis}\index{Verderbnis}
+
+\textbf{Verderbnis} ist die Langzeitfolge verbotener Praktiken.
+%TODO: Define this!
+
 \begin{itemize}[leftmargin=*]
 \item \textbf{0--1}: noch verborgen
 \item \textbf{2}: chaotische Zauberei gilt immer
-\item \textbf{3}: sofort neue Scar oder permanentes Tabu wählen, dann Corruption auf 1 setzen
+\item \textbf{3}: sofort neues Mal oder permanentes Tabu wählen, dann Verderbnis auf 1 setzen
 \end{itemize}
 
-\section{Permanentes Tabu}
+\section{Permanentes Tabu}\label{sec:permanentes-tabu}
+
 Ein \textbf{Tabu}\index{Tabu} ist ein niedergeschriebener verbotener Akt.
+Tabus können von Abstammung oder Weg kommen, oder aber auch selbst auferlegt sein.
+
 \begin{itemize}[leftmargin=*]
 \item Wird das Tabu gebrochen: sofort -1 Omen
-\item falls kein Omen vorhanden: stattdessen +1 Burden
+\item falls kein Omen vorhanden: stattdessen +1 Bürde
 \item bis zu einer Sühneszene wird keine Gunst regeneriert
 \end{itemize}
 
-\section{Zustande}
+\section{Zustände}\label{sec:zustande}\index{Zustand}
+
+Ein Charakter kann mehrere Zustände haben.
+Diese ergeben sich aus der Situation heraus, so kann Feuer den Zustand \textbf{Brennend} verursachen.
+Waffen können eine Eigenschaft haben, die bei einem Treffer einen Zustand verursacht.
+
 \begin{description}[style=nextline,leftmargin=0pt]
-\item[\textbf{Bleeding}]\index{Bleeding} 1 Wound am Ende jedes eigenen Zuges, bis behandelt
-\item[\textbf{Burning}]\index{Burning} 1 Wound, wenn der Charakter handelt; endet durch Ersticken oder Loschen
-\item[\textbf{Shaken}]\index{Shaken} -10 auf den nächsten körperlichen Test; verschwindet danach oder durch Recover/Assist
-\item[\textbf{Restrained}]\index{Restrained} kein Move und kein Sprint
-\item[\textbf{Broken}]\index{Broken} ausgewählte Ausrüstung unbrauchbar, bis sie repariert wurde
+\item[\textbf{Blutend}]\index{Blutend} 1 Wunde am Ende jedes eigenen Zuges, bis behandelt
+\item[\textbf{Brennend}]\index{Brennend} 1 Wunde, wenn der Charakter handelt; endet durch Ersticken oder Löschen
+\item[\textbf{Erschüttert}]\index{Erschüttert} -10 auf die nächste körperliche Probe; verschwindet danach oder durch Sich fassen/Unterstützen
+\item[\textbf{Festgesetzt}]\index{Festgesetzt} keine Bewegung und kein Sprinten
+\item[\textbf{Defekt}]\index{Defekt} die ausgewählte Ausrüstung ist unbrauchbar, bis sie repariert wurde
 \end{description}
 
-\section{Field Repair}\index{Field Repair}
-Eine kaputte Waffe, ein Schild, ein Rustungsteil oder Werkzeug kann im Feld geflickt werden:
+\section{Feldreparatur}\index{Feldreparatur}
+
+Eine kaputte Waffe, ein Schild, ein Rüstungsteil oder Werkzeug kann im Feld geflickt werden:
+
 \[
-Mind oder Deftness + Craft
+30 + \text{Geist oder Geschick} + \text{Handwerk}
 \]
-Kosten: 1 Action, Ziel auf sich selbst oder \textbf{Near}.
+
+Kosten: 1 Aktion, Ziel auf sich selbst oder \textbf{Nah}.
 
 \begin{itemize}[leftmargin=*]
 \item Kritischer, starker oder sauberer Erfolg: Gegenstand funktioniert für den Rest der Szene
-\item Knapp geschafft: funktioniert, ist aber nur geflickt; bricht er erneut in derselben Szene, ist keine weitere Feldreparatur möglich
+\item Knapp geschafft: funktioniert, ist aber nur geflickt; bricht er erneut in derselben Szene, ist keine weitere Feldreparatur möglich.
 \item Knapp oder klar gescheitert: keine Änderung
 \item Schwer oder katastrophal gescheitert: keine Änderung und das benötigte Ersatzmaterial ist verbraucht
 \end{itemize}
 
-\section{Erholung}
+\section{Erholung}\label{sec:erholung}\index{Erholung}
+
+Es gibt folgende Möglichkeiten der Erholung.
+
 \begin{description}[style=nextline,leftmargin=0pt]
-\item[\textbf{Field Patch} (1--2 Minuten)]\index{Field Patch} stoppt Bleeding, heilt aber keine Wounds
-\item[\textbf{Short Rest} (10--20 Minuten sicher)]\index{Short Rest} ein Healing-Test; bei Erfolg 1 Wound oder 1 Burden löschen
-\item[\textbf{Breather}]\index{Breather} einmal pro Szene 1 Burden oder 1 Arcana Pool oder 1 Gunst zurückgewinnen
-\item[\textbf{Full Rest}]\index{Full Rest} 2 Punkte insgesamt aus Wounds und Burden löschen, Pools voll auffüllen
-\item[\textbf{Poor/Unsafe Rest}]\index{Poor/Unsafe Rest} nur 1 Punkt aus Wounds/Burden löschen; Arcana und Gunst nur halb, aufgerundet
+\item[\textbf{Feldverband} (1--2 Minuten)]\index{Feldverband} stoppt Bluten, heilt aber keine Wunden
+\item[\textbf{Kurze Rast} (10--20 Minuten sicher)]\index{Kurze Rast} eine Heilung-Probe; bei Erfolg 1 Wunde oder 1 Bürde entfernen.
+\item[\textbf{Durchatmen}]\index{Durchatmen} einmal pro Szene 1 Bürde oder 1 Arkana oder 1 Gunst zurückgewinnen
+\item[\textbf{Vollständige Rast}]\index{Vollständige Rast} 2 Punkte insgesamt aus Wunden und Bürde löschen, Arkana und Gunst voll auffüllen
+\item[\textbf{Unsichere Rast}]\index{Unsichere Rast} nur 1 Punkt aus Wunden oder Bürde löschen; Arkana und Gunst bis zur Hälfte auffüllen
 \end{description}
 
-Ruhe entfernt niemals eine Scar.
+Ruhe entfernt niemals ein Mal.
 \end{multicols*}
