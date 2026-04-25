@@ -5,7 +5,7 @@ Scar -> Mal
 Burden -> Bürde
 Corruption -> Verderbnis
 Breaking Point -> Wendepunkt
-Belief ->
+Belief -> Glaube
 Growth ->
 Downtime-Actions -> Auszeit-Aktionen
 Mark Edge Sentences
