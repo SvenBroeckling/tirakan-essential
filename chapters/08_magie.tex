@@ -25,6 +25,73 @@ Für einen Charakter gilt:
 \item gewählte Zauber müssen aus den gewählten Aspekten stammen
 \end{itemize}
 
+\section{Zauber wirken}\label{sec:zauber-wirken}
+
+Wenn ein Begabter einen Zauber wirkt, gilt immer der gleiche Ablauf.
+
+Der Zauber gibt vor, ob es sich um ein Ritual oder einen einfachen Zauber handelt.
+Einfache Zauber können in einer Kampfhandlung gewirkt werden, während Rituale in der Regel mehr als eine Handlung benötigen.
+
+Danach kann der Begabte die Wirkstufe wählen, in der der Zauber wirkt.
+Die Stufe ist eine Auswahl aus ``Gering'', ``Normal'', ``Schwer'' und ``Katastrophal''.
+Der zaubernde Begabte kann die Wirkstufe beliebig festlegen.
+
+\begin{description}[style=nextline,leftmargin=0pt]
+\item[\textbf{Gering}]\index{Gering} +10 Zielwert
+\item[\textbf{Normal}]\index{Normal} keine Auswirkungen
+\item[\textbf{Schwer}]\index{Schwer} -10 Zielwert, +1 Arcana
+\item[\textbf{Katastrophal}]\index{Katastrophal} -30 Zielwert, +2 Arcana
+\end{description}
+
+Zuletzt wird mit eventuellen Modifikationen auf die Fertigkeit Zauberei geworden.
+Die Kosten des Zaubers müssen immer bezahlt werden, auch wenn der Zauber fehlschlägt.
+Der Zauber wirkt dann in der Stufe, die er gewählt hat.
+
+\subsection{Ergebnisse}\label{subsec:ergebnisse}
+\begin{itemize}[leftmargin=*]
+\item Kritischer, starker oder sauberer Erfolg: Effekt tritt wie erklärt ein
+\item Knapp geschafft: Effekt tritt ein, aber mit einem geringen instabilen Effekt
+\item jeder Misserfolg: kein beabsichtigter Effekt, stattdessen instabiler Effekt
+\end{itemize}
+
+\subsection{Zauberverstärkung}\label{subsec:zauberverstarkung}
+Bei erfolgreicher Zauberei gibt das \textbf{Magieniveau}\index{Magieniveau} genau \textbf{einen} Bonus auf:
+
+\begin{itemize}[leftmargin=*]
+\item Reichweite
+\item Dauer
+\item Zielzahl
+\item Schaden
+\end{itemize}
+
+\subsection{Instabile Effekte}\label{subsec:instabile-effekte}\index{Instabiler Effekt}
+
+Magie ist immer nur in gewissem Maß beherrschbar.
+Ist eine Zauberprobe misslungen oder nur knapp gelungen, so richtet sich der Instabile Effekt nach den Konsequenzen des Zauberwurfs (siehe \cref{sec:konsequenzen}).
+
+\begin{itemize}[leftmargin=*]
+\item \textbf{Gering}: +1 Bürde oder \textbf{Erschüttert}
+\item \textbf{Ernst}: +1 Wunde, großer Kollateralschaden oder feindliche Aufmerksamkeit
+\item \textbf{Kritisch}: +2 Bürde, schwerer Kollateralschaden oder bleibendes Mal
+\end{itemize}
+
+Ist die Probe \textbf{katastrophal gescheitert}, kommt zusätzlich ein weiterer Nebeneffekt hinzu.
+
+\subsection{Chaotische Zauberei}\label{subsec:chaotische-zauberei}
+
+Liegt das \textbf{Magieniveau} über 5, oder hat der zaubernde Begabte 2+ Verderbnis, so ist alle von ihm gewirkte Magie chaotische Magie.
+
+Wird ein Zauber mit chaotischer Magie gewirkt, so wird nach jedem Wirken ein W6 geworfen.
+
+\begin{enumerate}[leftmargin=*]
+\item Echo: Effekt trifft ein zusätzliches gültiges Nebenziel mit abgeschwächter Wirkung
+\item Entzug: der Zaubernde verliere 1 zusätzliches Arcana
+\item Bruch: Nahes zerbrechliches bricht
+\item Leuchtfeuer: Okkulte Aufmerksamkeit richtet sich auf den Zaubernden
+\item Umkehrung: Ein kleines beabsichtigtes Detail kehrt sich um
+\item Stabilität: kein Zusatzeffekt
+\end{enumerate}
+
 \section{Die Aspekte der Magie}\label{sec:die-aspekte-der-magie}
 
 Seit es die Magie auf Tirakan gibt, werden Aspekte der Magie von Begabten genutzt.
@@ -145,71 +212,5 @@ Zauberei ist die in den Augen der anderen magischen Zünfte ``niedere Kunst der 
 Die Zauber sind hauptsächlich in die Kategorie Tricks und Scharlatanerie zu fassen, sie können zwar mächtige Illusionen schaffen, jedoch nur geringen Einfluss auf die Umwelt nehmen.
 Die Ausübung der Zauberei ist bis auf wenige Ausnahmen mit wenig Aufwand verbunden.
 
-\section{Zauber wirken}\label{sec:zauber-wirken}
-
-Wenn ein Begabter einen Zauber wirkt, gilt immer der gleiche Ablauf.
-
-Der Zauber gibt vor, ob es sich um ein Ritual oder einen einfachen Zauber handelt.
-Einfache Zauber können in einer Kampfhandlung gewirkt werden, während Rituale in der Regel mehr als eine Handlung benötigen.
-
-Danach kann der Begabte die Wirkstufe wählen, in der der Zauber wirkt.
-Die Stufe ist eine Auswahl aus ``Gering'', ``Normal'', ``Schwer'' und ``Katastrophal''.
-Der zaubernde Begabte kann die Wirkstufe beliebig festlegen.
-
-\begin{description}[style=nextline,leftmargin=0pt]
-\item[\textbf{Gering}]\index{Gering} +10 Zielwert
-\item[\textbf{Normal}]\index{Normal} keine Auswirkungen
-\item[\textbf{Schwer}]\index{Schwer} -10 Zielwert, +1 Arcana
-\item[\textbf{Katastrophal}]\index{Katastrophal} -30 Zielwert, +2 Arcana
-\end{description}
-
-Zuletzt wird mit eventuellen Modifikationen auf die Fertigkeit Zauberei geworden.
-Die Kosten des Zaubers müssen immer bezahlt werden, auch wenn der Zauber fehlschlägt.
-Der Zauber wirkt dann in der Stufe, die er gewählt hat.
-
-\subsection{Ergebnisse}\label{subsec:ergebnisse}
-\begin{itemize}[leftmargin=*]
-\item Kritischer, starker oder sauberer Erfolg: Effekt tritt wie erklärt ein
-\item Knapp geschafft: Effekt tritt ein, aber mit einem geringen instabilen Effekt
-\item jeder Misserfolg: kein beabsichtigter Effekt, stattdessen instabiler Effekt
-\end{itemize}
-
-\subsection{Zauberverstärkung}\label{subsec:zauberverstarkung}
-Bei erfolgreicher Zauberei gibt das \textbf{Magieniveau}\index{Magieniveau} genau \textbf{einen} Bonus auf:
-
-\begin{itemize}[leftmargin=*]
-\item Reichweite
-\item Dauer
-\item Zielzahl
-\item Schaden
-\end{itemize}
-
-\subsection{Instabile Effekte}\label{subsec:instabile-effekte}\index{Instabiler Effekt}
-
-Magie ist immer nur in gewissem Maß beherrschbar.
-Ist eine Zauberprobe misslungen oder nur knapp gelungen, so richtet sich der Instabile Effekt nach den Konsequenzen des Zauberwurfs (siehe \cref{sec:konsequenzen}).
-
-\begin{itemize}[leftmargin=*]
-\item \textbf{Gering}: +1 Bürde oder \textbf{Erschüttert}
-\item \textbf{Ernst}: +1 Wunde, großer Kollateralschaden oder feindliche Aufmerksamkeit
-\item \textbf{Kritisch}: +2 Bürde, schwerer Kollateralschaden oder bleibendes Mal
-\end{itemize}
-
-Ist die Probe \textbf{katastrophal gescheitert}, kommt zusätzlich ein weiterer Nebeneffekt hinzu.
-
-\subsection{Chaotische Zauberei}\label{subsec:chaotische-zauberei}
-
-Liegt das \textbf{Magieniveau} über 5, oder hat der zaubernde Begabte 2+ Verderbnis, so ist alle von ihm gewirkte Magie chaotische Magie.
-
-Wird ein Zauber mit chaotischer Magie gewirkt, so wird nach jedem Wirken ein W6 geworfen.
-
-\begin{enumerate}[leftmargin=*]
-\item Echo: Effekt trifft ein zusätzliches gültiges Nebenziel mit abgeschwächter Wirkung
-\item Entzug: der Zaubernde verliere 1 zusätzliches Arcana
-\item Bruch: Nahes zerbrechliches bricht
-\item Leuchtfeuer: Okkulte Aufmerksamkeit richtet sich auf den Zaubernden
-\item Umkehrung: Ein kleines beabsichtigtes Detail kehrt sich um
-\item Stabilität: kein Zusatzeffekt
-\end{enumerate}
 
 \end{multicols*}

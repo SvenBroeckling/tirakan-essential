@@ -27,6 +27,96 @@ Hat der Charakter mindestens einen Punkt in die Fertigkeit \textbf{Ritus} invest
 Jeder Charakter hat eine gewisse \textbf{Gunst}, die für die Beziehung zwischen ihm und seiner bevorzugten Gottheit steht.
 Gunst wird für Anrufungen verwendet und kann durch gottgefälliges Handeln erlangt werden.
 
+\subsection{Auslöser}
+Belief wird genutzt, wenn ein Charakter eine Macht, Heilige, Ahnen oder namenlose Kräfte um Eingriff bittet.
+
+\subsection{Petition-Ablauf}
+\begin{enumerate}[leftmargin=*]
+\item Bitte, Zeugin und Opfer benennen
+\item \textbf{Gunst} ausgeben
+\item optional +1 Burden für eine verzweifelte Bitte nehmen
+\item \textbf{Petition}\index{Petition} werfen:
+\[
+ 1d10 + Anrufungswert + Gunst + Modifikatoren
+\]
+\end{enumerate}
+
+\[
+ \text{Anrufungswert} = \text{Faith Level} + \text{Faith Rang}
+\]
+
+Maximale Gunst pro Anrufung:
+\[
+ \text{Maximale Gunst pro Anrufung} = 1 + \lfloor \text{Will} / 2 \rfloor
+\]
+
+\subsection{Zeremonielle Modifikatoren}
+\begin{itemize}[leftmargin=*]
+\item +1 passendes Opfer, Gelübde oder Preis
+\item +1 geweihter Ort, Relikt oder anerkannte Zeugin
+\item +1 Chor, Helfende oder Gemeinde
+\item -1 hastig, improvisiert oder unterbrochen
+\item -2 Bitte widerspricht klar Lehre, Eid oder Natur der angerufenen Macht
+\item Gesamtkappung: höchstens +2, niedrigstens -2
+\end{itemize}
+
+\subsection{Ergebnisbander}
+\begin{description}[style=nextline,leftmargin=0pt]
+\item[\textbf{1--7 Silence}]\index{Silence} keine direkte Intervention, nur Zeichen oder Schweigen
+\item[\textbf{8--11 Sign}]\index{Sign} symbolische Antwort, Warnung, Hinweis oder kurzer Schutz
+\item[\textbf{12--15 Intercession}]\index{Intercession} spürbare Wunderwirkung im Rahmen der Szene
+\item[\textbf{16+ Theophany}]\index{Theophany} großer Eingriff, fremd und verstörend
+\end{description}
+
+Gunst wird immer verbraucht. Bei \textbf{Silence} unter Tabubruch gibt es +1 Burden. Bei \textbf{Theophany} wählt der Guide einen heiligen Preis: Gelübde, Stigma oder Omen-Schuld.
+
+\section{Petitionsformen}
+\subsection{Shock Prayer}\index{Shock Prayer}
+\begin{itemize}[leftmargin=*]
+\item Ausloser: unmittelbare Gefahr
+\item Dauer: 1 Action
+\item Kosten: 1--2 Gunst
+\item Wirkung: unmittelbare Standfestigkeit, Flucht, Warnung, Schutz oder Wucht
+\end{itemize}
+Bei \textbf{Sign}: +Faith Level auf einen sofortigen Test oder eine eingehende Consequence um eine Stufe senken.\\
+Bei \textbf{Intercession}: zwei solche Boons.\\
+Bei \textbf{Theophany}: die Szene kippt deutlich zugunsten der Gruppe, aber der Preis folgt.
+
+\subsection{Blessing Rite}\index{Blessing Rite}
+\begin{itemize}[leftmargin=*]
+\item Dauer: 10 Minuten
+\item Kosten: 2--4 Gunst
+\item Ziel: Person, Objekt, Schwelle, Grab, Wasserstelle oder kleine gottliche Verunreinigung
+\end{itemize}
+Sign wirkt bis zum Szenenende, Intercession bis zur nächsten Full Rest, Theophany kann hartnäckige Flüche brechen oder heiligen Boden schaffen.
+
+\subsection{Lesser Request}\index{Lesser Request}
+\begin{itemize}[leftmargin=*]
+\item Dauer: 10--15 Minuten
+\item Kosten: 2--6 Gunst
+\item Ziel: eine begrenzte Wunderbitte wie enthüllen, schützen, führen, reinigen, beruhigen oder plagen
+\end{itemize}
+Bei \textbf{Sign} gibt es ein klares Omen, eine Warnung, einen Weg oder kurzen Schutz.\\
+Bei \textbf{Intercession} geschieht ein konkretes Wunder auf Szenenmaßstab.\\
+Bei \textbf{Theophany} kippt die ganze Szene zugunsten der Bittenden, aber in verstörender oder unheimlicher Form.
+
+\subsection{Great Invocation}\index{Great Invocation}
+\begin{itemize}[leftmargin=*]
+\item Dauer: 30+ Minuten
+\item Kosten: 4--8 Gunst
+\item Voraussetzung: mindestens eine Zeugin und ein bedeutendes Opfer, Relikt oder Eid
+\end{itemize}
+Dies ist die Form für öffentliche Rettung, Urteil, Massenprotektion oder heiliges Strafgericht.
+Bei \textbf{Sign} kommen Furchtzeichen, Gewissheit oder ein zwingender Auftrag über die Szene.\\
+Bei \textbf{Intercession} greift ein großes Wunder über Menge, Stadtteilrand, Schlachtfeldkante oder entweihten Ort.\\
+Bei \textbf{Theophany} manifestiert sich eine szenenbestimmende Rettung, Verwandlung oder Verdammnis und fordert trotzdem einen heiligen Preis.
+
+\section{Verbotene Praxis und Relikte}
+\begin{itemize}[leftmargin=*]
+\item \textbf{Relikt}\index{Relikt}: speichert 1--3 Arcana oder Gunst und überträgt sie durch Berührung oder Ritus
+\item \textbf{Verbotene Methode}\index{Verbotene Methode}: senkt Zauberkosten um 1, mindestens auf 1, verursacht aber 1 Verderbnis
+\end{itemize}
+
 \section{Die Götter}\label{sec:die-gotter}
 
 Einst erwachten elf Geschwister, welche in einer Zeit lange vor Menschen, Elfen und Zwergen die Welt bevölkerten.
@@ -503,96 +593,4 @@ Wie erstaunt er doch war, als er feststellte, daß von Zeit zu Zeit eine seiner 
 Dies geschah recht selten, ein Frevel hier, ein dämonischer Pakt dort - Kleinigkeiten in seinen Augen.
 Doch war es für ihn ein Zeichen seiner Bestimmung.
 
-\subsection{Auslöser}
-Belief wird genutzt, wenn ein Charakter eine Macht, Heilige, Ahnen oder namenlose Kräfte um Eingriff bittet.
-
-\subsection{Petition-Ablauf}
-\begin{enumerate}[leftmargin=*]
-\item Bitte, Zeugin und Opfer benennen
-\item \textbf{Gunst} ausgeben
-\item optional +1 Burden für eine verzweifelte Bitte nehmen
-\item \textbf{Petition}\index{Petition} werfen:
-\[
-1d10 + Anrufungswert + Gunst + Modifikatoren
-\]
-\end{enumerate}
-
-\[
-\text{Anrufungswert} = \text{Faith Level} + \text{Faith Rang}
-\]
-
-Maximale Gunst pro Anrufung:
-\[
-\text{Maximale Gunst pro Anrufung} = 1 + \lfloor \text{Will} / 2 \rfloor
-\]
-
-\subsection{Zeremonielle Modifikatoren}
-\begin{itemize}[leftmargin=*]
-\item +1 passendes Opfer, Gelübde oder Preis
-\item +1 geweihter Ort, Relikt oder anerkannte Zeugin
-\item +1 Chor, Helfende oder Gemeinde
-\item -1 hastig, improvisiert oder unterbrochen
-\item -2 Bitte widerspricht klar Lehre, Eid oder Natur der angerufenen Macht
-\item Gesamtkappung: höchstens +2, niedrigstens -2
-\end{itemize}
-
-\subsection{Ergebnisbander}
-\begin{description}[style=nextline,leftmargin=0pt]
-\item[\textbf{1--7 Silence}]\index{Silence} keine direkte Intervention, nur Zeichen oder Schweigen
-\item[\textbf{8--11 Sign}]\index{Sign} symbolische Antwort, Warnung, Hinweis oder kurzer Schutz
-\item[\textbf{12--15 Intercession}]\index{Intercession} spürbare Wunderwirkung im Rahmen der Szene
-\item[\textbf{16+ Theophany}]\index{Theophany} großer Eingriff, fremd und verstörend
-\end{description}
-
-Gunst wird immer verbraucht. Bei \textbf{Silence} unter Tabubruch gibt es +1 Burden. Bei \textbf{Theophany} wählt der Guide einen heiligen Preis: Gelübde, Stigma oder Omen-Schuld.
-
-\section{Petitionsformen}
-\subsection{Shock Prayer}\index{Shock Prayer}
-\begin{itemize}[leftmargin=*]
-\item Ausloser: unmittelbare Gefahr
-\item Dauer: 1 Action
-\item Kosten: 1--2 Gunst
-\item Wirkung: unmittelbare Standfestigkeit, Flucht, Warnung, Schutz oder Wucht
-\end{itemize}
-Bei \textbf{Sign}: +Faith Level auf einen sofortigen Test oder eine eingehende Consequence um eine Stufe senken.\\
-Bei \textbf{Intercession}: zwei solche Boons.\\
-Bei \textbf{Theophany}: die Szene kippt deutlich zugunsten der Gruppe, aber der Preis folgt.
-
-\subsection{Blessing Rite}\index{Blessing Rite}
-\begin{itemize}[leftmargin=*]
-\item Dauer: 10 Minuten
-\item Kosten: 2--4 Gunst
-\item Ziel: Person, Objekt, Schwelle, Grab, Wasserstelle oder kleine gottliche Verunreinigung
-\end{itemize}
-Sign wirkt bis zum Szenenende, Intercession bis zur nächsten Full Rest, Theophany kann hartnäckige Flüche brechen oder heiligen Boden schaffen.
-
-\subsection{Lesser Request}\index{Lesser Request}
-\begin{itemize}[leftmargin=*]
-\item Dauer: 10--15 Minuten
-\item Kosten: 2--6 Gunst
-\item Ziel: eine begrenzte Wunderbitte wie enthüllen, schützen, führen, reinigen, beruhigen oder plagen
-\end{itemize}
-Bei \textbf{Sign} gibt es ein klares Omen, eine Warnung, einen Weg oder kurzen Schutz.\\
-Bei \textbf{Intercession} geschieht ein konkretes Wunder auf Szenenmaßstab.\\
-Bei \textbf{Theophany} kippt die ganze Szene zugunsten der Bittenden, aber in verstörender oder unheimlicher Form.
-
-\subsection{Great Invocation}\index{Great Invocation}
-\begin{itemize}[leftmargin=*]
-\item Dauer: 30+ Minuten
-\item Kosten: 4--8 Gunst
-\item Voraussetzung: mindestens eine Zeugin und ein bedeutendes Opfer, Relikt oder Eid
-\end{itemize}
-Dies ist die Form für öffentliche Rettung, Urteil, Massenprotektion oder heiliges Strafgericht.
-Bei \textbf{Sign} kommen Furchtzeichen, Gewissheit oder ein zwingender Auftrag über die Szene.\\
-Bei \textbf{Intercession} greift ein großes Wunder über Menge, Stadtteilrand, Schlachtfeldkante oder entweihten Ort.\\
-Bei \textbf{Theophany} manifestiert sich eine szenenbestimmende Rettung, Verwandlung oder Verdammnis und fordert trotzdem einen heiligen Preis.
-
-\section{Verbotene Praxis und Relikte}
-\begin{itemize}[leftmargin=*]
-\item \textbf{Relikt}\index{Relikt}: speichert 1--3 Arcana oder Gunst und überträgt sie durch Berührung oder Ritus
-\item \textbf{Verbotene Methode}\index{Verbotene Methode}: senkt Zauberkosten um 1, mindestens auf 1, verursacht aber 1 Verderbnis
-\end{itemize}
-
-\section{Vollständiger Zauberkatalog}
-Der komplette aktive Katalog aus 178 Zaubern steht in \cref{app:spells}. Für die Laufzeit am Tisch sind dort vor allem id, name, school, spell\_points und description verbindlich.
 \end{multicols*}
