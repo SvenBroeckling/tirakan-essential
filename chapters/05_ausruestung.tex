@@ -3,90 +3,124 @@
 
 \begin{multicols*}{2}
 
-\section{Waffen}\label{sec:waffen}
+Die Ausrüstung eines Charakters bestimmt, womit er kämpft, wie gut er Treffer abfängt und welche Hilfsmittel ihm in einer Szene zur Verfügung stehen.
+Dieses Kapitel beschreibt die allgemeinen Regeln für Ausrüstung.
+Die konkreten Waffen, Rüstungen, Schilde und Gegenstände stehen gesammelt in \cref{app:equipment}.
 
-Jede Waffe besitzt:
+\section{Waffen und Angriffe}\label{sec:waffen}
+
+Jede Waffe besitzt feste Spielwerte.
+Diese Werte bestimmen, wie sie in einem Konflikt eingesetzt wird.
 
 \begin{description}[style=nextline,leftmargin=0pt]
-\item[\textbf{Schaden}]\index{Schaden} Grundschaden eines erfolgreichen Treffers
-\item[\textbf{Reichweite}] bevorzugte Distanzstufen (im Nahkampf, nah, fern, weit)
-\item[\textbf{Griff}] Handhabbarkeit unter Druck
-\item[\textbf{Eigenschaften}] Verhaltensmerkmale mit festen Regelfolgen
+\item[\textbf{Schaden}]\index{Schaden} Der Grundschaden eines erfolgreichen Treffers.
+\item[\textbf{Reichweite}] Die Distanzstufen, auf denen die Waffe eingesetzt werden kann.
+\item[\textbf{Griff}] Ein Modifikator für den ersten Angriff einer Runde.
+\item[\textbf{Eigenschaften}] Besondere Regeln der Waffe.
 \end{description}
 
 \subsection{Griff}\label{subsec:griff}
+
+Der \textbf{Griff} gibt an, wie leicht eine Waffe im entscheidenden Moment geführt werden kann.
+Der Modifikator gilt für den ersten Angriff in einer Runde mit dieser Waffe.
+
 \begin{itemize}[leftmargin=*]
 \item \textbf{G2}: +10 auf den ersten Angriff der Runde mit dieser Waffe
 \item \textbf{G1}: kein Modifikator
 \item \textbf{G0}: -10 auf den ersten Angriff der Runde mit dieser Waffe
 \end{itemize}
 
-\subsection{Eigenschaften}\label{subsec:eigenschaften}
+\subsection{Nachladen und Werfen}
+
+Einige Waffen müssen nach einem Schuss oder Wurf wieder einsatzbereit gemacht werden.
+Dies geschieht nach den Eigenschaften der Waffe.
+
+\begin{itemize}[leftmargin=*]
+\item Waffen mit \textbf{Nachladen 1} benötigen 1 Aktion zum Nachladen.
+\item Waffen mit \textbf{Nachladen 2} benötigen 2 Aktionen zum Nachladen. Diese können aufgeteilt oder am Stück eingesetzt werden.
+\item Waffen mit \textbf{Wurf} können auf nah geworfen werden und müssen danach wiederbeschafft werden.
+\end{itemize}
+
+\section{Rüstung, Schilde und Deckung}\label{sec:rustung}
+
+\textbf{Rüstung}\index{Rustung} besitzt drei Kernwerte.
+
 \begin{description}[style=nextline,leftmargin=0pt]
-\item[\textbf{Abfangen}] Mit gehaltener Aktion kann auf einen Gegner reagiert werden, der von nah in den Nahkampf eintritt.
-\item[\textbf{Aufsetzen}] Wurde in derselben Runde gezielt oder aufgesetzt und das Ziel tritt in den Nahkampf ein, verursacht der Angriff +1 Schaden.
-\item[\textbf{Laut}] Der Angriff ist auffällig und kann sofort Aufmerksamkeit oder Eskalation auslösen.
-\item[\textbf{Durchdringend}] Ignoriert 1 Punkt Schutz.
-\item[\textbf{Wurf}] Kann auf nah geworfen werden und muss danach wiederbeschafft werden.
-\item[\textbf{Schwer}] -10 auf Reaktionen mit dieser Waffe.
-\item[\textbf{Zweihändig}] Kann nicht zusammen mit einem Schild geführt werden.
-\item[\textbf{Verbergbar}] +10, um die Waffe vor Szenenbeginn zu verbergen.
-\item[\textbf{Nichttödlich}] Verursachte Wunden können stattdessen als gleich hohe Bürde vergeben werden.
-\item[\textbf{Brutal}] Bei einem sauberen oder starken Treffer muss das Ziel Körper + Standhaftigkeit testen, sonst wird es \textbf{Erschüttert}.
-\item[\textbf{Nah}] +10 in engem Raum.
-\item[\textbf{Ausgewogen}] Keine zusätzliche Regel.
-\item[\textbf{Wuchtig}] Gegen Schutz 2+ verursacht der Angriff +1 Schaden vor Abzug des Schutzes.
-\item[\textbf{Nachladen 1}] Nachladen kostet 1 Aktion.
-\item[\textbf{Nachladen 2}] Nachladen kostet 2 Aktionen, aufgeteilt oder am Stück.
+\item[\textbf{Schutz}]\index{Schutz} Schutz reduziert den Schaden eines Treffers. Der finale Schaden ergibt sich aus Schaden minus Schutz, mindestens jedoch 0.
+\item[\textbf{Last}] Last erschwert Bewegung und Heimlichkeit.
+\item[\textbf{Versiegelung}]\index{Versiegelung} Versiegelung schützt vor einzelnen Zuständen wie Erschütterung oder Blutverlust.
 \end{description}
 
-\section{Rüstung}\label{sec:rustung}
+Für \textbf{Last} gelten folgende Stufen:
 
-\textbf{Rüstung}\index{Rustung} besitzt drei Kernwerte:
-\begin{description}[style=nextline,leftmargin=0pt]
-\item[\textbf{Schutz}]\index{Schutz} Reduziert eingehenden Schaden einmalig: Finaler Schaden = Schaden - Schutz (Minimum 0)
-\item[\textbf{Last}] Bewegungs- und Schleichbelastung
-\item[\textbf{Versiegelung}]\index{Versiegelung} Schutz gegen Schock und Aufreißen
-\end{description}
-
-\textbf{Last}:
 \begin{itemize}[leftmargin=*]
 \item \textbf{L0}: keine Bewegungslast
 \item \textbf{L1}: -10 auf Schleichbewegung
 \item \textbf{L2}: -10 auf Schleichbewegung und Sprint nur 1 Band
 \end{itemize}
 
-\textbf{Versiegelung}:
+Für \textbf{Versiegelung} gelten folgende Stufen:
+
 \begin{itemize}[leftmargin=*]
 \item \textbf{S0}: keine Zusatzregel
 \item \textbf{S1}: ein erstes \textbf{Erschüttert} oder \textbf{Blutend} pro Konflikt ignorieren
 \item \textbf{S2}: wie S1 und zusätzlich einmal pro Szene ein weiteres \textbf{Erschüttert} ignorieren
 \end{itemize}
 
-Es gilt immer nur \textbf{ein} getragenes Rüstungsprofil.
+Es gilt immer nur \textbf{ein} getragenes Rüstungsprofil, auch wenn mehrere Rüstungsteile getragen werden.
 
-\section{Schilde}\label{sec:schilde}
+\subsection{Schilde}\label{sec:schilde}
 
-\textbf{Schilde}\index{Schild} werden als Reaktion genutzt und kosten immer 1 Aktion.
+\textbf{Schilde}\index{Schild} werden als Reaktion eingesetzt.
+Eine Schildreaktion kostet immer 1 Aktion und gilt nur gegen den auslösenden Angriff.
 
 \begin{itemize}[leftmargin=*]
-\item \textbf{Buckler}: +10 gegen einen Nahkampfangriff
+\item \textbf{Faustschild}: +10 gegen einen Nahkampfangriff
 \item \textbf{Rundschild}: +10 gegen einen Angriff
-\item \textbf{Turmschild}: +20 gegen einen Fernkampfangriff
+\item \textbf{Dreiecksschild}: +20 gegen einen Fernkampfangriff
 \end{itemize}
 
-\section{Deckung}\label{sec:deckung}
+\subsection{Deckung}\label{sec:deckung}
 
-\textbf{Deckung}\index{Deckung} funktioniert nur gegen Fernangriffe.
+\textbf{Deckung}\index{Deckung} wirkt nur gegen Fernangriffe.
+Es zählt immer nur die höchste vorhandene Deckung.
+
 \begin{itemize}[leftmargin=*]
-\item \textbf{leichte Deckung}: +10 Verteidigung
-\item \textbf{starke Deckung}: +20 Verteidigung
-\item es gilt immer nur die höchste Deckung
+\item \textbf{Leichte Deckung}: +10 Verteidigung
+\item \textbf{Starke Deckung}: +20 Verteidigung
 \end{itemize}
+
+\section{Ausrüstungseigenschaften}\label{sec:eigenschaften}
+
+Ausrüstungseigenschaften verändern den normalen Ablauf einer Handlung oder ergänzen ihn um feste Zusatzeffekte.
+
+\begin{description}[style=nextline,leftmargin=0pt]
+\item[\textbf{Abfangen}] Mit gehaltener Aktion kann auf einen Gegner reagiert werden, der von nah in den Nahkampf eintritt.
+\item[\textbf{Aufsetzen}] Wurde in derselben Runde gezielt oder aufgesetzt und das Ziel tritt in den Nahkampf ein, verursacht der Angriff +1 Schaden.
+\item[\textbf{Ausgewogen}] Keine zusätzliche Regel.
+\item[\textbf{Brutal}] Bei einem sauberen oder starken Treffer muss das Ziel Körper + Standhaftigkeit testen, sonst wird es \textbf{Erschüttert}.
+\item[\textbf{Durchdringend}] Ignoriert 1 Punkt Schutz.
+\item[\textbf{Feldtauglich}] Für Marsch, Wache und Reise gemacht. Die Spielleiterin kann in passenden Situationen kleine Nachteile durch Witterung, Schmutz oder langes Tragen entfallen lassen.
+\item[\textbf{Kriegsgerät}] Auffällige militärische Ausrüstung. Sie ist in zivilen oder engen Umgebungen schwer zu verbergen und kann sofort Aufmerksamkeit erregen.
+\item[\textbf{Laut}] Der Einsatz ist auffällig und kann sofort Aufmerksamkeit oder Eskalation auslösen.
+\item[\textbf{Nichttödlich}] Verursachte Wunden können stattdessen als gleich hohe Bürde vergeben werden.
+\item[\textbf{Ritual}] Das Stück ist für zeremonielle, gelehrte oder kultische Handlungen ausgelegt. Die Spielleiterin kann in passenden Situationen kleine Vorteile auf Vorbereitung, Anerkennung oder Deutung gewähren.
+\item[\textbf{Schwer}] -10 auf Reaktionen mit diesem Ausrüstungsstück.
+\item[\textbf{Verbergbar}] +10, um den Gegenstand vor Szenenbeginn zu verbergen.
+\item[\textbf{Verstärkt}] Die Ausrüstung ist besonders belastbar. Die Spielleiterin kann in passenden Situationen Abnutzung, Bruch oder Beschädigung später eintreten lassen.
+\item[\textbf{Wuchtig}] Gegen Schutz 2+ verursacht der Angriff +1 Schaden vor Abzug des Schutzes.
+\item[\textbf{Nah}] +10 in engem Raum.
+\item[\textbf{Nachladen 1}] Nachladen kostet 1 Aktion.
+\item[\textbf{Nachladen 2}] Nachladen kostet 2 Aktionen, aufgeteilt oder am Stück.
+\item[\textbf{Wurf}] Kann auf nah geworfen werden und muss danach wiederbeschafft werden.
+\item[\textbf{Zweihändig}] Kann nicht zusammen mit einem Schild geführt werden.
+\end{description}
 
 \section{Gebrauchsgegenstände}\label{sec:gebrauchsgegenstande}
-Die meisten Gegenstände kosten 1 Aktion.
-Verbrauchsgüter sind normalerweise einmalig oder haben eine feste kleine Nutzungszahl.
+
+Gebrauchsgegenstände decken Werkzeuge, Heilmittel, Reisebedarf und ähnliche Dinge ab.
+Wenn die Regeln nichts anderes angeben, kostet der Einsatz eines Gegenstands 1 Aktion.
+Verbrauchsgüter sind in der Regel einmalig oder besitzen nur wenige Anwendungen.
 
 Der vollständige Satz aus Waffen, Rüstungen, Schilden und Gebrauchsgegenständen steht in \cref{app:equipment}.
 \end{multicols*}
