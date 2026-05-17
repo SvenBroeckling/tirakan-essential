@@ -212,6 +212,56 @@
   \medskip
 }
 
+\newcommand{\bindungspielwertebox}[2]{%
+  \medskip
+  \noindent\begin{tikzpicture}
+    \node[
+      draw=ruleaccent!70,
+      fill=ruleaccent!6,
+      rounded corners=4pt,
+      line width=0.6pt,
+      inner xsep=10pt,
+      inner ysep=9pt,
+      text width=\dimexpr\columnwidth-20pt\relax,
+      align=left
+    ] (spielwertebox) {%
+      \vspace{0.25\baselineskip}%
+      \setlength{\parskip}{0pt}%
+      \setlength{\parindent}{0pt}%
+      \raggedright
+      \textbf{Vorteil:} #1\par
+      \smallskip
+      \textbf{Verwundbarkeit:} #2%
+    };
+  \end{tikzpicture}
+  \medskip
+}
+
+\newcommand{\malspielwertebox}[2]{%
+  \medskip
+  \noindent\begin{tikzpicture}
+    \node[
+      draw=ruleaccent!70,
+      fill=ruleaccent!6,
+      rounded corners=4pt,
+      line width=0.6pt,
+      inner xsep=10pt,
+      inner ysep=9pt,
+      text width=\dimexpr\columnwidth-20pt\relax,
+      align=left
+    ] (spielwertebox) {%
+      \vspace{0.25\baselineskip}%
+      \setlength{\parskip}{0pt}%
+      \setlength{\parindent}{0pt}%
+      \raggedright
+      \textbf{Vorteil:} #1\par
+      \smallskip
+      \textbf{Verwundbarkeit:} #2%
+    };
+  \end{tikzpicture}
+  \medskip
+}
+
 \begin{document}
 
 \begin{titlepage}
