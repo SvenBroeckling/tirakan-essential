@@ -3,27 +3,20 @@
 
 \begin{multicols*}{2}
 
-\section{Magisches Tirakan}\label{sec:magisches-tirakan}
+\section{Magisches Tirakan}\label{sec:magisches-tirakan}\index{Magie}
 
 Tirakan ist eine magische Welt.
 Bereits im ersten Zeitalter, als die Götter ihrer selbst gewahr wurden, herrschte eine chaotische Magie auf der Welt.
-Im Laufe der Jahrhunderte sollte die Magie immer mehr in Bahnen gelenkt werden.
-Magische Apekte enstanden, die Wesen Tirakans lernten, die Magie auf unterschiedlichste Art und Weise zu kontrollieren.
+Im Laufe der Jahrhunderte sollte die Magie immer mehr in Bahnen gelenkt werden. Magische Apekte enstanden, die Wesen Tirakans lernten, die Magie auf unterschiedlichste Art und Weise zu kontrollieren.
 
-\section{Der Begabte}\label{sec:der-begabte}
+\section{Der Begabte}\label{sec:der-begabte}\index{Zauber}\index{Zauberei}\index{Aspekt}
 
 Jedes Lebewesen auf Tirakan hat eine gewisse Fähigkeit, mit der Magie der Welt umzugehen.
-Ein Charakter kann die magische Kraft kontrollieren und Zauber sprechen, wenn er mindestens einen Punkt in der Fähigkeit \textbf{Zauberei} hat.
+Ein Charakter kann die magische Kraft kontrollieren und Zauber sprechen, wenn er mindestens einen Punkt im Attribut \textbf{Gabe} hat.
+
 Wesen mit der Fähigkeit zur Kontrolle der Magie werden in der Regel \textbf{Begabte} genannt.
 
-Für einen Charakter gilt:
-
-\begin{itemize}[leftmargin=*]
-\item Zauberei >= 1: einen Aspekt wählen
-\item Zauberei >= 2: zwei Aspekte wählen
-\item Startzauber: 2 + Zauberei Rang, maximal 5
-\item gewählte Zauber müssen aus den gewählten Aspekten stammen
-\end{itemize}
+Ein Begabter mit einem Attributswert von 1 in \textbf{Gabe} hat einen Aspekt. Ist die Gabe des Charakters höher, so hat er zwei Aspekte. Ein neuer Charakter beherrscht \textbf{Gabe + 2} Zauber, die aus den gewählten Aspekten stammen müssen.
 
 \section{Zauber wirken}\label{sec:zauber-wirken}
 
@@ -32,27 +25,44 @@ Wenn ein Begabter einen Zauber wirkt, gilt immer der gleiche Ablauf.
 Der Zauber gibt vor, ob es sich um ein Ritual oder einen einfachen Zauber handelt.
 Einfache Zauber können in einer Kampfhandlung gewirkt werden, während Rituale in der Regel mehr als eine Handlung benötigen.
 
-Danach kann der Begabte die Wirkstufe wählen, in der der Zauber wirkt.
+Danach kann der Begabte die Wirkstufe beliebig wählen, in der der Zauber wirkt.
 Die Stufe ist eine Auswahl aus ``Gering'', ``Normal'', ``Schwer'' und ``Katastrophal''.
-Der zaubernde Begabte kann die Wirkstufe beliebig festlegen.
 
-\begin{description}[style=nextline,leftmargin=0pt]
-\item[\textbf{Gering}]\index{Gering} +10 Zielwert
-\item[\textbf{Normal}]\index{Normal} keine Auswirkungen
-\item[\textbf{Schwer}]\index{Schwer} -10 Zielwert, +1 Arcana
-\item[\textbf{Katastrophal}]\index{Katastrophal} -30 Zielwert, +2 Arcana
+\begin{description}[leftmargin=0pt]
+\item[\textbf{Gering}]\index{Gering} +10 Zielwert, Zauberstärke 0
+\item[\textbf{Normal}]\index{Normal} keine Auswirkungen, Zauberstärke 1
+\item[\textbf{Schwer}]\index{Schwer} -10 Zielwert, +1 Arcana, Zauberstärke 3
+\item[\textbf{Katastrophal}]\index{Katastrophal} -30 Zielwert, +2 Arcana, Zauberstärke 5
 \end{description}
 
-Zuletzt wird mit eventuellen Modifikationen auf die Fertigkeit Zauberei geworden.
+Zuletzt wird mit eventuellen Modifikationen auf das Attribut \textbf{Gabe} geworfen.
 Die Kosten des Zaubers müssen immer bezahlt werden, auch wenn der Zauber fehlschlägt.
-Der Zauber wirkt dann in der Stufe, die er gewählt hat.
+Der Zauber wirkt dann mit der Zauberstärke, die gewählt wurde.
 
 \subsection{Ergebnisse}\label{subsec:ergebnisse}
 \begin{itemize}[leftmargin=*]
-\item Kritischer, starker oder sauberer Erfolg: Effekt tritt wie erklärt ein
-\item Knapp geschafft: Effekt tritt ein, aber mit einem geringen instabilen Effekt
-\item jeder Misserfolg: kein beabsichtigter Effekt, stattdessen instabiler Effekt
+    \item Kritischer Erfolg: +2 Zauberstärke
+    \item Starker Erfolg: +1 Zauberstärke
+    \item Sauberer Erfolg: Effekt tritt wie erklärt ein
+    \item Knapp geschafft: Effekt tritt ein, aber mit einem geringen Nebeneffekt
+    \item jeder Misserfolg: kein beabsichtigter Effekt, stattdessen Nebeneffekt
 \end{itemize}
+
+\subsection{Foki}\label{subsec:fokus}\index{Fokus}
+
+Ein Fokus ist ein Gegenstand oder Lebewesen, durch welches ein Begabter Magie wirkt.
+
+Der Fokus ist die konkrete Form, in der sich die magische Praxis eines Charakters ausdrückt: der geschnitzte Stab eines Hermetikers, das verzierte Messer eines Dämonologen, ein Tiergefährte, ein Runensatz oder ein geweihtes Werkzeug. Er muss zur Art der Magie passen und sollte sichtbar machen, wie der Begabte seine Kräfte bündelt und in die Welt lenkt.
+
+Ein Begabter benennt bei der Erschaffung seinen Fokus und trägt ihn auf dem Charakterbogen ein. Verliert er den Zugang zu diesem Fokus, entscheidet die Spielleiterin je nach Situation über Einschränkungen, erschwerte Zauber oder das vorübergehende Unwirksamwerden einzelner Wirkungen, bis Ersatz geschaffen, der Fokus zurückgewonnen oder ein neuer Fokus im Spiel etabliert wurde.
+
+\subsection{Regenerationsritual}\label{subsec:regenerationsritual}\index{Regenerationsritual}
+
+Das Regenerationsritual dient dem Begabten zur Wiederherstellung von Arkana.
+
+Es sollte dem Stil und Thema des Weges bzw. der magischen Aspekte folgen.
+Jeder Begabte kennt ein persönliches Regenerationsritual, mit dem er erschöpfte Arkana wieder in sich ordnen kann. Dieses Ritual kann Meditation, Opfer, Gesang, nächtige Sternbeobachtung, das Ziehen von Kreisen, Gebete an eine Macht oder andere passende Handlungen umfassen, solange klar ist, wie der Charakter dadurch erneut in Einklang mit seiner Magie tritt.
+Wie lange das Ritual dauert und unter welchen Bedingungen es sicher durchgeführt werden kann, bestimmt die Spielleiterin nach Situation und Fiktion. Ein Regenerationsritual ist keine beiläufige Geste im Vorbeigehen, sondern eine erkennbare Praxis, die Ruhe, Material, Ort oder Vorbereitung verlangen kann; neue Charaktere benennen diese Praxis bei der Erschaffung und notieren sie auf dem Charakterbogen.
 
 \subsection{Zauberverstärkung}\label{subsec:zauberverstarkung}
 Bei erfolgreicher Zauberei gibt das \textbf{Magieniveau}\index{Magieniveau} genau \textbf{einen} Bonus auf:
@@ -64,10 +74,10 @@ Bei erfolgreicher Zauberei gibt das \textbf{Magieniveau}\index{Magieniveau} gena
 \item Schaden
 \end{itemize}
 
-\subsection{Instabile Effekte}\label{subsec:instabile-effekte}\index{Instabiler Effekt}
+\subsection{Nebeneffekte}\label{subsec:nebeneffekte}\index{Nebeneffekt}
 
 Magie ist immer nur in gewissem Maß beherrschbar.
-Ist eine Zauberprobe misslungen oder nur knapp gelungen, so richtet sich der Instabile Effekt nach den Konsequenzen des Zauberwurfs (siehe \cref{sec:konsequenzen}).
+Ist eine Zauberprobe misslungen oder nur knapp gelungen, so richtet sich der Nebeneffekt nach den Konsequenzen des Zauberwurfs (siehe \cref{sec:konsequenzen}).
 
 \begin{itemize}[leftmargin=*]
 \item \textbf{Gering}: +1 Bürde oder \textbf{Erschüttert}

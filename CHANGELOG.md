@@ -9,6 +9,13 @@ and this project uses semantic versioning through `version.tex`.
 
 ### Changed
 
+## [0.2.1] - 2026-05-24
+
+### Changed
+
+- Added the new `Gabe` attribute to the rules, character creation and character sheet.
+- Rewrote the magic rules to fit the spells, added focus and regeneration ritual.
+
 ## [0.2.0] - 2026-05-24
 
 ### Changed
