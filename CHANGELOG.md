@@ -9,6 +9,15 @@ and this project uses semantic versioning through `version.tex`.
 
 ### Changed
 
+## [0.2.2] - 2026-05-25
+
+### Changed
+
+- Renamed a broad set of remaining English combat, faith, magic, downtime, and glossary terms to their German rulebook equivalents, including `Action`, `Growth`, `Arcana`, `Wound Threshold`, and several status and prayer terms.
+- Clarified that tests can use either an attribute plus skill or two attributes.
+- Added a dedicated `Wegfacette`.
+- Cleaned up the glossary.
+
 ## [0.2.1] - 2026-05-24
 
 ### Changed

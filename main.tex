@@ -189,7 +189,7 @@
   \medskip
 }
 
-\newcommand{\wegespielwertebox}[3]{%
+\newcommand{\wegespielwertebox}[4]{%
   \medskip
   \noindent\begin{tikzpicture}
     \node[
@@ -210,7 +210,9 @@
       \smallskip
       \textbf{Verwundbarkeit:} #2\par
       \smallskip
-      \textbf{Fertigkeiten:} #3%
+      \textbf{Wegfacette:} #3\par
+      \smallskip
+      \textbf{Fertigkeiten:} #4%
     };
   \end{tikzpicture}
   \medskip
@@ -315,7 +317,7 @@
       \footnotesize
       \renewcommand{\arraystretch}{1.05}%
       \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}p{0.47\linewidth}p{0.47\linewidth}@{}}
-        \textbf{ZP:} #1 & \textbf{Arcana:} #2 \\
+        \textbf{ZP:} #1 & \textbf{Arkana:} #2 \\
         \textbf{Reichweite:} #3 & \textbf{Dauer:} #4 \\
         \textbf{Form:} #5 & \textbf{Wirken:} #6 \\
         \multicolumn{2}{@{}p{\linewidth}@{}}{\textbf{Konzentration:} #7} \\
