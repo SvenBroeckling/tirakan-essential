@@ -7,10 +7,13 @@ and this project uses semantic versioning through `version.tex`.
 
 ## [Unreleased]
 
-### Added
+### Changed
+
+## [0.2.0] - 2026-05-24
 
 ### Changed
 
+- Added the spells from phasesix to the appendix
 - Moved the glossary behind the appendix, added a dedicated license chapter after the index, and expanded that license appendix with the full CC BY-NC-SA 4.0 text plus its illustrated opening page.
 
 ## [0.1.9] - 2026-05-24

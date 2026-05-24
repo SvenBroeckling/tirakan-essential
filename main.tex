@@ -271,6 +271,60 @@
   \medskip
 }
 
+\newcommand{\spelltag}[1]{%
+  \tikz[baseline=(spelltag.base)]\node[
+    draw=ruleaccent!35,
+    fill=ruleaccent!6,
+    rounded corners=3pt,
+    line width=0.5pt,
+    inner xsep=5pt,
+    inner ysep=1.5pt,
+    text=primarytext!70,
+    font=\sffamily\fontsize{7.5pt}{8.5pt}\selectfont
+  ] (spelltag) {#1};%
+}
+
+\newcommand{\spellheader}[3]{%
+  \par\nobreak
+  \vspace{-0.45\baselineskip}%
+  {\noindent\small
+    \spelltag{#1}\hspace{0.35em}%
+    \spelltag{#2}%
+    \ifstrequal{#3}{1 Kampfhandlung}{}{%
+      \hspace{0.35em}\spelltag{Ritual}%
+    }%
+    \par
+  }%
+  \vspace{0.35\baselineskip}%
+}
+
+\newcommand{\spellinfobox}[7]{%
+  \noindent\begin{tikzpicture}
+    \node[
+      draw=ruleaccent!70,
+      fill=ruleaccent!6,
+      rounded corners=4pt,
+      line width=0.6pt,
+      inner xsep=10pt,
+      inner ysep=8pt,
+      text width=\dimexpr\columnwidth-20pt\relax,
+      align=left
+    ] {%
+      \setlength{\parskip}{0pt}%
+      \setlength{\parindent}{0pt}%
+      \footnotesize
+      \renewcommand{\arraystretch}{1.05}%
+      \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}p{0.47\linewidth}p{0.47\linewidth}@{}}
+        \textbf{ZP:} #1 & \textbf{Arcana:} #2 \\
+        \textbf{Reichweite:} #3 & \textbf{Dauer:} #4 \\
+        \textbf{Form:} #5 & \textbf{Wirken:} #6 \\
+        \multicolumn{2}{@{}p{\linewidth}@{}}{\textbf{Konzentration:} #7} \\
+      \end{tabular*}%
+    };
+  \end{tikzpicture}
+  \vspace{0.45\baselineskip}%
+}
+
 \begin{document}
 
 \begin{titlepage}
