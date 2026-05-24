@@ -162,7 +162,7 @@
   \end{flushright}
 }
 
-\newcommand{\abstammungspielwertebox}[2]{%
+\newcommand{\abstammungspielwertebox}[3]{%
   \medskip
   \noindent\begin{tikzpicture}
     \node[
@@ -181,13 +181,15 @@
       \raggedright
       \textbf{Vorteil:} #1\par
       \smallskip
-      \textbf{Verwundbarkeit:} #2%
+      \textbf{Verwundbarkeit:} #2\par
+      \smallskip
+      \textbf{Fertigkeiten:} #3%
     };
   \end{tikzpicture}
   \medskip
 }
 
-\newcommand{\wegespielwertebox}[2]{%
+\newcommand{\wegespielwertebox}[3]{%
   \medskip
   \noindent\begin{tikzpicture}
     \node[
@@ -206,9 +208,16 @@
       \raggedright
       \textbf{Vorteil:} #1\par
       \smallskip
-      \textbf{Verwundbarkeit:} #2%
+      \textbf{Verwundbarkeit:} #2\par
+      \smallskip
+      \textbf{Fertigkeiten:} #3%
     };
   \end{tikzpicture}
+  \medskip
+}
+
+\newcommand{\praegungsfertigkeiten}[1]{%
+  \noindent\textbf{Fertigkeiten:} #1\par
   \medskip
 }
 

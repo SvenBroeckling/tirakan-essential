@@ -84,6 +84,12 @@
     }%
 }
 
+\newcommand{\blankskillrow}[1][4]{%
+    \parbox[t]{\linewidth}{%
+        \rule{\dimexpr\linewidth-5.8em\relax}{0.4pt}\hfill\trackboxes{#1}%
+    }%
+}
+
 \newcommand{\tinybox}[1]{%
     \tikz[baseline=(b.base)]\node[
         draw=boxline,
@@ -95,7 +101,7 @@
 }
 
 \newcommand{\trackboxes}[1]{%
-    \foreach \n in {0,...,\numexpr#1-1\relax}{%
+    \foreach \n in {1,...,#1}{%
         \tinybox{\textcolor{boxline!55}{\fontsize{5.5pt}{5.5pt}\selectfont \n}}%
     }%
 }
@@ -197,19 +203,20 @@
         \begin{sheetpanel}{Fertigkeiten}
             \small
             \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X}
-\fieldwithcheckboxes{Athletik}{3} \\[0.2cm]
-\fieldwithcheckboxes{Kampf}{3} \\[0.2cm]
-\fieldwithcheckboxes{Schießen}{3} \\[0.2cm]
-\fieldwithcheckboxes{Heimlichkeit}{3} \\[0.2cm]
-\fieldwithcheckboxes{Handwerk}{3} \\[0.2cm]
-\fieldwithcheckboxes{Heilen}{3} \\[0.2cm]
-\fieldwithcheckboxes{Wahrnehmung}{3} \\[0.2cm]
-\fieldwithcheckboxes{Mythen}{3} \\[0.2cm]
-\fieldwithcheckboxes{Einfluss}{3} \\[0.2cm]
-\fieldwithcheckboxes{Standhaftigkeit}{3} \\[0.2cm]
-\fieldwithcheckboxes{Zauberei}{3} \\[0.2cm]
-\fieldwithcheckboxes{Ritus}{3} \\[0.2cm]
-\fieldwithcheckboxes{Magiekunde}{3}
+\blankskillrow \\[0.16cm]
+\blankskillrow \\[0.16cm]
+\blankskillrow \\[0.16cm]
+\blankskillrow \\[0.16cm]
+\blankskillrow \\[0.16cm]
+\blankskillrow \\[0.16cm]
+\blankskillrow \\[0.16cm]
+\blankskillrow \\[0.16cm]
+\blankskillrow \\[0.16cm]
+\blankskillrow \\[0.16cm]
+\blankskillrow \\[0.16cm]
+\blankskillrow \\[0.16cm]
+\blankskillrow \\[0.16cm]
+\blankskillrow
             \end{tabularx}
             \normalsize
         \end{sheetpanel}
