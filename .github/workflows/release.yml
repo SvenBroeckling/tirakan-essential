@@ -2,8 +2,9 @@ name: Build and Release PDFs
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
+    branches:
+      - main
+      - evaluation-**
 
 permissions:
   contents: write
@@ -33,25 +34,78 @@ jobs:
           fi
           echo "value=$version" >> "$GITHUB_OUTPUT"
 
-      - name: Verify tag matches version.tex
+      - name: Determine release mode
+        id: release
         shell: bash
         run: |
-          expected_tag="v${{ steps.version.outputs.value }}"
-          actual_tag="${GITHUB_REF_NAME}"
-          if [[ "$actual_tag" != "$expected_tag" ]]; then
-            echo "Tag '$actual_tag' does not match version.tex ('$expected_tag')." >&2
+          version_tag="v${{ steps.version.outputs.value }}"
+
+          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
+            if git tag --points-at HEAD | grep -Fxq "$version_tag"; then
+              echo "enabled=true" >> "$GITHUB_OUTPUT"
+              echo "kind=version" >> "$GITHUB_OUTPUT"
+              echo "tag_name=$version_tag" >> "$GITHUB_OUTPUT"
+              echo "release_name=$version_tag" >> "$GITHUB_OUTPUT"
+              echo "artifact_name=tirakan-essential-pdfs-$version_tag" >> "$GITHUB_OUTPUT"
+              echo "notes_path=release-notes.md" >> "$GITHUB_OUTPUT"
+            else
+              echo "enabled=false" >> "$GITHUB_OUTPUT"
+            fi
+            exit 0
+          fi
+
+          if [[ "${GITHUB_REF_NAME}" != evaluation-* ]]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          branch_slug="$(printf '%s' "${GITHUB_REF_NAME}" | tr '/[:upper:]' '-[:lower:]' | tr -cd 'a-z0-9._-')"
+          if [[ -z "$branch_slug" ]]; then
+            echo "Could not derive evaluation tag from branch '${GITHUB_REF_NAME}'." >&2
             exit 1
           fi
 
+          echo "enabled=true" >> "$GITHUB_OUTPUT"
+          echo "kind=evaluation" >> "$GITHUB_OUTPUT"
+          echo "tag_name=eval-$branch_slug" >> "$GITHUB_OUTPUT"
+          echo "release_name=Evaluation ${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+          echo "artifact_name=tirakan-essential-pdfs-eval-$branch_slug" >> "$GITHUB_OUTPUT"
+          echo "notes_path=release-notes.md" >> "$GITHUB_OUTPUT"
+
+      - name: Stop when no release should be created
+        if: steps.release.outputs.enabled != 'true'
+        shell: bash
+        run: exit 0
+
       - name: Extract release notes from changelog
-        id: changelog
+        if: steps.release.outputs.kind == 'version'
         shell: bash
         run: |
           chmod +x scripts/extract_changelog_release.sh
           scripts/extract_changelog_release.sh "${{ steps.version.outputs.value }}" release-notes.md
-          echo "path=release-notes.md" >> "$GITHUB_OUTPUT"
+
+      - name: Write evaluation release notes
+        if: steps.release.outputs.kind == 'evaluation'
+        shell: bash
+        run: |
+          cat <<EOF > release-notes.md
+          Evaluation build for branch \`${GITHUB_REF_NAME}\`.
+
+          - Commit: \`${GITHUB_SHA}\`
+          - Version in \`version.tex\`: \`${{ steps.version.outputs.value }}\`
+          EOF
+
+      - name: Move evaluation tag to current commit
+        if: steps.release.outputs.kind == 'evaluation'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -f "${{ steps.release.outputs.tag_name }}" "$GITHUB_SHA"
+          git push origin "refs/tags/${{ steps.release.outputs.tag_name }}" --force
 
       - name: Build sheet.tex pass 1
+        if: steps.release.outputs.enabled == 'true'
         uses: xu-cheng/latex-action@v3
         with:
           root_file: sheet.tex
@@ -59,6 +113,7 @@ jobs:
           args: -interaction=nonstopmode -halt-on-error
 
       - name: Build sheet.tex pass 2
+        if: steps.release.outputs.enabled == 'true'
         uses: xu-cheng/latex-action@v3
         with:
           root_file: sheet.tex
@@ -66,6 +121,7 @@ jobs:
           args: -interaction=nonstopmode -halt-on-error
 
       - name: Build main.tex pass 1
+        if: steps.release.outputs.enabled == 'true'
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
@@ -73,6 +129,7 @@ jobs:
           args: -interaction=nonstopmode -halt-on-error
 
       - name: Build main.tex pass 2
+        if: steps.release.outputs.enabled == 'true'
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
@@ -80,20 +137,24 @@ jobs:
           args: -interaction=nonstopmode -halt-on-error
 
       - name: Upload build artifacts
+        if: steps.release.outputs.enabled == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: tirakan-essential-pdfs-v${{ steps.version.outputs.value }}
+          name: ${{ steps.release.outputs.artifact_name }}
           path: |
             main.pdf
             sheet.pdf
           if-no-files-found: error
 
       - name: Create GitHub release
+        if: steps.release.outputs.enabled == 'true'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ steps.version.outputs.value }}
-          name: v${{ steps.version.outputs.value }}
-          body_path: ${{ steps.changelog.outputs.path }}
+          tag_name: ${{ steps.release.outputs.tag_name }}
+          name: ${{ steps.release.outputs.release_name }}
+          body_path: ${{ steps.release.outputs.notes_path }}
+          prerelease: ${{ steps.release.outputs.kind == 'evaluation' }}
+          make_latest: ${{ steps.release.outputs.kind == 'version' && 'true' || 'false' }}
           files: |
             main.pdf
             sheet.pdf

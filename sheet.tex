@@ -94,6 +94,27 @@
     }%
 }
 
+\newcommand{\attributestepbox}[2]{%
+    \tikz[baseline=-0.55ex]{
+        \draw[draw=boxline, fill=white] (0,0) rectangle (2.05em,1.65em);
+        \draw[draw=boxline!40] (0.16em,0.12em) -- (1.89em,1.53em);
+        \node[anchor=north west, inner sep=0.16em] at (0,1.65em) {\fontsize{5pt}{5pt}\selectfont #1};
+        \node[anchor=south east, inner sep=0.16em] at (2.05em,0) {\fontsize{4.8pt}{4.8pt}\selectfont #2};
+    }%
+}
+
+\newcommand{\attributefield}[2][0pt]{%
+    \parbox[t]{\linewidth}{%
+        \textbf{#2}\hfill%
+        \attributestepbox{0}{30}\hspace{0.18em}%
+        \attributestepbox{1}{45}\hspace{0.18em}%
+        \attributestepbox{2}{60}\hspace{0.18em}%
+        \attributestepbox{3}{75}\hspace{0.18em}%
+        \attributestepbox{4}{90}%
+        \vspace{#1}%
+    }%
+}
+
 \newcommand{\blankskillrow}[1][4]{%
     \parbox[t]{\linewidth}{%
         \rule{\dimexpr\linewidth-5.8em\relax}{0.4pt}\hfill\trackboxes{#1}%
@@ -163,27 +184,6 @@
         \parbox{\dimexpr\linewidth-2\tabcolsep\relax}{\fieldwithheading[0.2cm]{Schuld oder Eid}}\par
     \end{sheetpanel}
 
-    \begin{minipage}[t]{0.235\linewidth}
-        \begin{sheetpanel}{\tiny Initiative Zielwert}
-            \rule{\linewidth}{0.4pt}\vspace{0.28cm}\par
-        \end{sheetpanel}
-    \end{minipage}\hfill%
-    \begin{minipage}[t]{0.235\linewidth}
-        \begin{sheetpanel}{\tiny Aktionen pro Runde}
-            \rule{\linewidth}{0.4pt}\vspace{0.28cm}\par
-        \end{sheetpanel}
-    \end{minipage}\hfill%
-    \begin{minipage}[t]{0.235\linewidth}
-        \begin{sheetpanel}{\tiny Omen}
-            \rule{\linewidth}{0.4pt}\vspace{0.28cm}\par
-        \end{sheetpanel}
-    \end{minipage}\hfill%
-    \begin{minipage}[t]{0.235\linewidth}
-        \begin{sheetpanel}{\tiny Zauberverstärkung}
-            \rule{\linewidth}{0.4pt}\vspace{0.28cm}\par
-        \end{sheetpanel}
-    \end{minipage}\hfill
-
     \noindent\begin{minipage}[t]{0.48\linewidth}
                  \begin{sheetpanel}{Zustand}
                      \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X}
@@ -199,13 +199,13 @@
                  \begin{sheetpanel}{Attribute}
                      \small
                      \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X}
-\fieldwithcheckboxes{Geist}{4} \\[0.2cm]
-\fieldwithcheckboxes{Wille}{4} \\[0.2cm]
-\fieldwithcheckboxes{Instinkt}{4} \\[0.2cm]
-\fieldwithcheckboxes{Geschick}{4} \\[0.2cm]
-\fieldwithcheckboxes{Körper}{4} \\[0.2cm]
-\fieldwithcheckboxes{Erscheinung}{4} \\[0.2cm]
-\fieldwithcheckboxes{Gabe}{4}
+\attributefield{Geist} \\[0.2cm]
+\attributefield{Wille} \\[0.2cm]
+\attributefield{Instinkt} \\[0.2cm]
+\attributefield{Geschick} \\[0.2cm]
+\attributefield{Körper} \\[0.2cm]
+\attributefield{Erscheinung} \\[0.2cm]
+\attributefield{Gabe}
                      \end{tabularx}
                      \normalsize
                  \end{sheetpanel}
@@ -229,6 +229,20 @@
 \blankskillrow \\[0.16cm]
 \blankskillrow
             \end{tabularx}
+            \normalsize
+        \end{sheetpanel}
+        \begin{sheetpanel}{Fertigkeitsstufen}
+            \scriptsize
+\renewcommand{\arraystretch}{1.05}
+            \begin{tabularx}{\linewidth}{@{}>{\raggedleft\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}X@{}}
+\textbf{0 Improvisiert} & Einfache Anwendungen; Komplexes evtl. unmöglich oder mit Konsequenz. \\
+\textbf{1 Geübt} & Knappe Fehlschläge zählen als Stillstand. \\
+\textbf{2 Erfahren} & 1x pro Szene passende Probe neu würfeln; neues Ergebnis gilt. \\
+\textbf{3 Meisterlich} & Bei Erfolg Ergebnisstufe um 1 verbessern. \\
+\textbf{4 Legendär} & 1x pro Szene passende Konsequenz vollständig negieren. \\
+            \end{tabularx}
+            \vspace{0.08cm}\par
+            \textit{Die Effekte sind kumulativ: Jede Stufe schließt alle Vorteile der niedrigeren Stufen ein.}
             \normalsize
         \end{sheetpanel}
     \end{minipage}
