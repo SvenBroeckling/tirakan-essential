@@ -1,0 +1,225 @@
+\documentclass[10pt]{scrartcl}
+
+\usepackage[ngerman]{babel}
+\usepackage{fontspec}
+\usepackage[a4paper,margin=7mm]{geometry}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\KOMAoptions{parskip=half}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+\raggedbottom
+
+\setmainfont{EBGaramond-Regular.ttf}[
+    Path=assets/fonts/,
+    BoldFont=EBGaramond-Bold.ttf,
+    ItalicFont=EBGaramond-Italic.ttf,
+    BoldItalicFont=EBGaramond-BoldItalic.ttf
+]
+\setsansfont{Metamorphous-Regular.ttf}[
+    Path=assets/fonts/,
+    BoldFont=Metamorphous-Regular.ttf,
+    BoldFeatures={FakeBold=1.5},
+    ItalicFont=Metamorphous-Regular.ttf,
+    ItalicFeatures={FakeSlant=0.2}
+]
+\newfontfamily\displayfont{Metamorphous-Regular.ttf}[
+    Path=assets/fonts/,
+    ItalicFont=Metamorphous-Regular.ttf,
+    ItalicFeatures={FakeSlant=0.2},
+    SlantedFont=Metamorphous-Regular.ttf,
+    SlantedFeatures={FakeSlant=0.2},
+    BoldFont=Metamorphous-Regular.ttf,
+    BoldFeatures={FakeBold=1.5}
+]
+\setmonofont{Oxanium-Regular.ttf}[
+    Path=assets/fonts/,
+    BoldFont=Oxanium-Bold.ttf
+]
+
+\definecolor{primarytext}{RGB}{20,18,17}
+\definecolor{linkcolor}{RGB}{143,49,20}
+\definecolor{ruleaccent}{RGB}{84,33,20}
+\definecolor{boxline}{RGB}{82,62,52}
+\definecolor{boxfill}{RGB}{247,242,234}
+\color{primarytext}
+\input{version.tex}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    pdftitle={Tirakans Reiche NSC-Bogen},
+    pdfauthor={OpenAI Codex},
+    pdfsubject={Version \tirakanversion}
+}
+
+\AddToShipoutPictureBG{%
+    \AtPageLowerLeft{%
+        \includegraphics[width=\paperwidth,height=\paperheight]{assets/images/tirakan-background.png}%
+    }%
+}
+
+\AddToShipoutPictureFG{%
+    \AtPageLowerLeft{%
+        \begin{tikzpicture}[remember picture,overlay]
+            \draw[boxline!55,dashed,line width=0.5pt]
+                ([xshift=0.5\paperwidth]current page.south west) --
+                ([xshift=0.5\paperwidth]current page.north west);
+            \draw[boxline!55,dashed,line width=0.5pt]
+                ([yshift=0.5\paperheight]current page.south west) --
+                ([yshift=0.5\paperheight]current page.south east);
+        \end{tikzpicture}%
+    }%
+}
+
+\newcommand{\sheettitle}[1]{%
+    {\displayfont\fontsize{13pt}{15pt}\selectfont #1}
+}
+
+\newcommand{\cardheader}[1]{%
+    \noindent\colorbox{ruleaccent}{%
+        \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+            \color{white}\displayfont\normalsize #1%
+        }%
+    }\par
+}
+
+\newcommand{\linefield}[2][0.16cm]{%
+    \parbox[t]{\linewidth}{%
+        \textbf{#2}\par
+        \vspace{0.04cm}
+        \rule{\linewidth}{0.4pt}\vspace{#1}%
+    }%
+}
+
+\newcommand{\tinybox}[1]{%
+    \tikz[baseline=(b.base)]\node[
+        draw=boxline,
+        fill=white,
+        minimum width=1.0em,
+        minimum height=1.0em,
+        inner sep=0pt
+    ] (b) {\strut #1};
+}
+
+\newcommand{\trackboxes}[1]{%
+    \foreach \n in {1,...,#1}{%
+        \tinybox{\textcolor{boxline!55}{\fontsize{5.2pt}{5.2pt}\selectfont \n}}%
+    }%
+}
+
+\newcommand{\tierboxes}{%
+    \tinybox{}\hspace{0.08em}\textbf{Frail}\hspace{0.45em}%
+    \tinybox{}\hspace{0.08em}\textbf{Trained}\hspace{0.45em}%
+    \tinybox{}\hspace{0.08em}\textbf{Veteran}\hspace{0.45em}%
+    \tinybox{}\hspace{0.08em}\textbf{Elite}\hspace{0.45em}%
+    \tinybox{}\hspace{0.08em}\textbf{Monstrous}%
+}
+
+\newcommand{\numberfield}[1]{%
+    \textbf{#1}\par
+    \vspace{0.03cm}
+    \rule{\linewidth}{0.4pt}\vspace{0.10cm}%
+}
+
+\newcommand{\npcnotes}{%
+    \rule{\linewidth}{0.35pt}\vspace{0.10cm}\par
+}
+
+\newcommand{\npccard}{%
+    \begin{tikzpicture}[baseline=(current bounding box.north)]
+        \node[
+            draw=boxline,
+            line width=0.8pt,
+            fill=boxfill,
+            rounded corners=3pt,
+            inner sep=5pt,
+            text width=\dimexpr\linewidth-12pt\relax
+        ] {%
+            \begin{minipage}[t][0.40\textheight][t]{\linewidth}
+                \cardheader{NSC-Bogen}
+                \vspace{0.06cm}
+
+                \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.56\linewidth} >{\raggedright\arraybackslash}X}
+\linefield[0.08cm]{Name} & \linefield[0.08cm]{Rolle}
+                \end{tabularx}
+
+                \vspace{0.04cm}
+                \textbf{Tier}\hfill{\scriptsize Basis 40/50/60/70/80, dann +10/-10}\par
+                \vspace{0.04cm}
+                {\small \tierboxes}\par
+
+                \vspace{0.08cm}
+                \cardheader{Werte}
+                \vspace{0.06cm}
+                \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\numberfield{Assault} & \numberfield{Reaktion} & \numberfield{Will}
+                \end{tabularx}
+
+                \vspace{0.02cm}
+                \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\numberfield{Schaden} & \numberfield{Schutz} & \numberfield{Wundschwelle}
+                \end{tabularx}
+
+                \vspace{0.01cm}
+                \textbf{Wunden}\hfill\trackboxes{8}\par
+                \vspace{0.05cm}
+                \textbf{Einheiten / Mob}\hfill\trackboxes{8}\par
+
+                \vspace{0.08cm}
+                \cardheader{Meisteraktion}
+                \vspace{0.04cm}
+                \linefield[0.12cm]{Effekt in einem Satz}
+
+                \vspace{0.04cm}
+                \cardheader{Schwache Stelle}
+                \vspace{0.04cm}
+                \linefield[0.10cm]{Ausnutzbare Schwache (-20 fur einen Austausch)}
+
+                \vspace{0.04cm}
+                \cardheader{Notizen}
+                \vspace{0.04cm}
+                {\footnotesize Taktik, Zustand, Beute, Terrain}\par
+                \vspace{0.04cm}
+                \npcnotes
+                \npcnotes
+            \end{minipage}
+        };
+    \end{tikzpicture}%
+}
+
+\begin{document}
+
+    \begin{center}
+        \sheettitle{Gegnerbogen \enspace | \enspace Version \tirakanversion}
+    \end{center}
+
+    \vspace{0.04cm}
+
+    \noindent\begin{minipage}[t][0.425\textheight][t]{0.49\linewidth}
+        \npccard
+    \end{minipage}\hfill
+    \begin{minipage}[t][0.425\textheight][t]{0.49\linewidth}
+        \npccard
+    \end{minipage}
+
+    \vspace{0.12cm}
+
+    \noindent\begin{minipage}[t][0.425\textheight][t]{0.49\linewidth}
+        \npccard
+    \end{minipage}\hfill
+    \begin{minipage}[t][0.425\textheight][t]{0.49\linewidth}
+        \npccard
+    \end{minipage}
+
+\end{document}

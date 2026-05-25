@@ -1,4 +1,4 @@
-\worldchapter{Charakterbogen}{appendix-templates}
+\worldchapter{Charakter- und NSC-Bogen}{appendix-templates}
 \label[appendix]{app:sheets}
 
 \IfFileExists{sheet.pdf}{
@@ -6,4 +6,11 @@
 }{
   \section*{Charakterbogen fehlt}
   Die Datei sheet.pdf wurde noch nicht erzeugt. Baue im Verzeichnis book/ zuerst sheet.tex, damit der Anhang den druckfertigen Bogen einbetten kann.
+}
+
+\IfFileExists{npc_sheet.pdf}{
+  \includepdf[pages=-,fitpaper=true,pagecommand={}]{npc_sheet.pdf}
+}{
+  \section*{NSC-Bogen fehlt}
+  Die Datei npc_sheet.pdf wurde noch nicht erzeugt. Baue im Verzeichnis book/ zuerst npc_sheet.tex, damit der Anhang den druckfertigen Bogen einbetten kann.
 }

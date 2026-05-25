@@ -120,6 +120,22 @@ jobs:
           latexmk_use_lualatex: true
           args: -interaction=nonstopmode -halt-on-error
 
+      - name: Build npc_sheet.tex pass 1
+        if: steps.release.outputs.enabled == 'true'
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: npc_sheet.tex
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -halt-on-error
+
+      - name: Build npc_sheet.tex pass 2
+        if: steps.release.outputs.enabled == 'true'
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: npc_sheet.tex
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -halt-on-error
+
       - name: Build main.tex pass 1
         if: steps.release.outputs.enabled == 'true'
         uses: xu-cheng/latex-action@v3
@@ -136,14 +152,21 @@ jobs:
           latexmk_use_lualatex: true
           args: -interaction=nonstopmode -halt-on-error
 
+      - name: Prepare release filenames
+        if: steps.release.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          cp main.pdf tirakans-reiche-essential.pdf
+
       - name: Upload build artifacts
         if: steps.release.outputs.enabled == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.release.outputs.artifact_name }}
           path: |
-            main.pdf
+            tirakans-reiche-essential.pdf
             sheet.pdf
+            npc_sheet.pdf
           if-no-files-found: error
 
       - name: Create GitHub release
@@ -156,5 +179,6 @@ jobs:
           prerelease: ${{ steps.release.outputs.kind == 'evaluation' }}
           make_latest: ${{ steps.release.outputs.kind == 'version' && 'true' || 'false' }}
           files: |
-            main.pdf
+            tirakans-reiche-essential.pdf
             sheet.pdf
+            npc_sheet.pdf
