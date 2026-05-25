@@ -1,6 +1,6 @@
-\documentclass[11pt,open=any,oneside]{scrbook}
+\documentclass[11pt,open=any,oneside,parskip=half]{scrbook}
 
-\usepackage[german]{babel}
+\usepackage[ngerman]{babel}
 \usepackage{fontspec}
 \usepackage{geometry}
 \usepackage{microtype}
@@ -13,7 +13,6 @@
 \usepackage{array}
 \usepackage{amsmath}
 \usepackage{multicol}
-\usepackage{parskip}
 \usepackage{enumitem}
 \usepackage{etoolbox}
 \usepackage{xcolor}
@@ -25,8 +24,6 @@
 \Crefname{appendix}{Anhang}{Anhänge}
 \usepackage{pdfpages}
 \usepackage{scrlayer-scrpage}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 \usepackage{makeidx}
 \usepackage{amstext}
 \makeindex
@@ -45,9 +42,19 @@
   ItalicFont=EBGaramond-Italic.ttf,
   BoldItalicFont=EBGaramond-BoldItalic.ttf
 ]
-\setsansfont{Metamorphous-Regular.ttf}[Path=assets/fonts/]
+\setsansfont{Metamorphous-Regular.ttf}[
+  Path=assets/fonts/,
+  BoldFont=Metamorphous-Regular.ttf,
+  BoldFeatures={FakeBold=1.5},
+  ItalicFont=Metamorphous-Regular.ttf,
+  ItalicFeatures={FakeSlant=0.2}
+]
 \newfontfamily\displayfont{Metamorphous-Regular.ttf}[
   Path=assets/fonts/,
+  ItalicFont=Metamorphous-Regular.ttf,
+  ItalicFeatures={FakeSlant=0.2},
+  SlantedFont=Metamorphous-Regular.ttf,
+  SlantedFeatures={FakeSlant=0.2},
   BoldFont=Metamorphous-Regular.ttf,
   BoldFeatures={FakeBold=1.5}
 ]

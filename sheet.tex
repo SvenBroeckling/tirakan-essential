@@ -1,6 +1,6 @@
 \documentclass[10pt]{scrartcl}
 
-\usepackage[german]{babel}
+\usepackage[ngerman]{babel}
 \usepackage{fontspec}
 \usepackage[a4paper,margin=9mm]{geometry}
 \usepackage{microtype}
@@ -27,9 +27,19 @@
     ItalicFont=EBGaramond-Italic.ttf,
     BoldItalicFont=EBGaramond-BoldItalic.ttf
 ]
-\setsansfont{Metamorphous-Regular.ttf}[Path=assets/fonts/]
+\setsansfont{Metamorphous-Regular.ttf}[
+    Path=assets/fonts/,
+    BoldFont=Metamorphous-Regular.ttf,
+    BoldFeatures={FakeBold=1.5},
+    ItalicFont=Metamorphous-Regular.ttf,
+    ItalicFeatures={FakeSlant=0.2}
+]
 \newfontfamily\displayfont{Metamorphous-Regular.ttf}[
     Path=assets/fonts/,
+    ItalicFont=Metamorphous-Regular.ttf,
+    ItalicFeatures={FakeSlant=0.2},
+    SlantedFont=Metamorphous-Regular.ttf,
+    SlantedFeatures={FakeSlant=0.2},
     BoldFont=Metamorphous-Regular.ttf,
     BoldFeatures={FakeBold=1.5}
 ]

@@ -20,6 +20,7 @@ build() {
     lualatex main.tex
     makeindex main.idx
     lualatex main.tex
+    lualatex main.tex
     atril main.pdf &
 }
 
