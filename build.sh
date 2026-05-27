@@ -25,8 +25,8 @@ build() {
     lualatex main.tex
     lualatex main.tex
     firefox main.pdf &
-    firefox sheet.pdf &
     firefox npc_sheet.pdf &
+    firefox sheet.pdf &
 }
 
 action="${1:-build}"

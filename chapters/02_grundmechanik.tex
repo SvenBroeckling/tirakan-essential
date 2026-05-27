@@ -9,7 +9,7 @@ Spieler und Spielleiterin begeben sich zusammen auf eine fantastische Reise, bei
 Die Spieler steuern ihre \textbf{Charaktere} in dieser fiktiven Welt, und handeln in ihrem Namen.
 Die Fähigkeiten eines Charakters, ihr Hab und Gut, ihre Stärken und Schwächen werden auf dem \textbf{Charakterbogen} niedergeschrieben.
 Du als Spieler beschreibst der Spielleiterin das Handeln deines Charakters.
-Möglicherweise erfordert die Handlung deines Charakters eine \textbf{Probe}, einen Test auf eine bestimmte Eigenschaft oder eine Fertigkeit.
+Möglicherweise erfordert die Handlung deines Charakters eine \textbf{Probe}, einen Test auf ein bestimmtes \textbf{Attribut}, bei dem passende \textbf{Fertigkeiten} zusätzliche Vorteile geben können.
 
 Diese Proben sind der Kern des Spiels.
 Es ist die Grundmechanik, um über den Erfolg oder das Misslingen einer Handlung zu bestimmen.
@@ -24,23 +24,49 @@ Ein Ergebnis von \textbf{00} bedeutet 100.
 
 Ob Erkundung, soziale Spannung, Verfolgung, Ritual oder Kampf: Wenn der Ausgang unsicher ist und Konsequenzen hat, wird eine Probe abgelegt.
 
+Die Regeln legen besonderen Wert auf den Ausgang der Probe. Es ist nicht einfach nur ein geschafft oder nicht geschafft, es wird besonderen Wert auf die \textbf{Konsequenzen} einer Probe gelegt. Ob im alltäglichen, im Handwerk oder beim Ausüben von Magie, jede Probe hat Folgen für die Situation oder den Charakter.
+
 \subsection{Zielwert}\label{subsec:zielwert}
 
-Eine Probe wird immer auf einen Wert geworfen, der sich entweder aus einem \textbf{Attribut}\index{Attribut} und einer \textbf{Fertigkeit}\index{Fertigkeit} oder zwei Attributen zusammen setzt.
-Attribut und Fertigkeit werden in der jeweiligen Situation von der Spielleiterin vorgegeben, wenn die Regeln nicht etwas anderes vorsehen.
-Zu den Attributen zählen \textbf{Geist}, \textbf{Wille}, \textbf{Instinkt}, \textbf{Geschick}, \textbf{Körper}, \textbf{Erscheinung} und \textbf{Gabe}.
+Eine Probe wird immer auf genau ein \textbf{Attribut}\index{Attribut} geworfen.
+Die Spielleiterin bestimmt das passende Attribut für die Situation, wenn die Regeln nicht etwas anderes vorsehen.
+Zu den Attributen zählen \textbf{Geist}, \textbf{Wille}, \textbf{Instinkt}, \textbf{Geschick}, \textbf{Körper}, \textbf{Erscheinung}, \textbf{Gabe} und \textbf{Wahrnehmung}.
 
-Welche Fertigkeiten ein Charakter besitzt, ergibt sich bei der Erschaffung aus seiner Abstammung und seinem Weg.
 
-Dieser \textbf{Zielwert}\index{Zielwert} muss unterschritten werden, damit die Probe erfolgreich ist.
-Der Zielwert ergibt sich, indem Attribut und Fertigkeit mit 10 multipliziert und dann addiert werden, und 30 hinzugefügt werden.
+Dieser \textbf{Zielwert}\index{Zielwert} muss unterschritten werden, damit die Probe erfolgreich ist. Dieser Zielwert ist gestaffelt nach dem Rang, den der Charakter in dem Attribut hat:\\
 
-\[
-Zielwert = 30 + (Attribut \times 10) + (Fertigkeit \times 10)
-\]
+\begin{tabular}{ll}
+    \toprule
+    \textbf{Attribut}  & \textbf{Zielwert}\\
+    \midrule
+    \textbf{0}        & 30 \\
+    \textbf{1}        & 45 \\
+    \textbf{2}        & 60 \\
+    \textbf{3}        & 75 \\
+    \textbf{4}        & 90 \\
+    \bottomrule
+\end{tabular}
 
 Der Zielwert wird immer auf 5 bis 95 begrenzt.
 Eine Probe gelingt, wenn der Wurf kleiner als der Zielwert ist.
+
+\subsection{Fertigkeit}\label{subsec:probe-fertigkeit}
+
+Besitzt der Charakter eine passende Fertigkeit, die er in der Situation einsetzen kann, so gelten die Vorteile der Fertigkeit. Fertigkeiten sind ausführlich in \cref{sec:fertigkeiten} beschrieben. Fertigkeiten entscheiden, ob eine Handlung fachgerecht möglich ist und welche Rangvorteile gelten, verändern den Zielwert aber nicht.
+
+\begin{tabularx}{\linewidth}{lX}
+    \toprule
+    \textbf{Fertigkeit}  & \textbf{Effekt}\\
+    \midrule
+    \textbf{0 Improvisiert}        & Bei Misslingen der Probe wird die Konsequenzstufe um eins erhöht.\\
+    \textbf{1 Geübt}        &  Knapp gescheiterte Proben zählen als Stillstand und nicht als geringe Konsequenz.\\
+    \textbf{2 Erfahren}        & Einmal pro Szene darf eine Probe neu gewürfelt werden, das neue Ergebnis zählt. \\
+    \textbf{3 Meisterlich}        & Wenn die Probe gelingt, wird die Ergebnisstufe um eins angehoben.  \\
+    \textbf{4 Legendär}        & Einmal pro Szene darf das Ergebnis einer Probe vollständig ignoriert werden. \\
+    \bottomrule
+\end{tabularx}
+
+Die Stufen der Fertigkeiten gelten kumulativ. Das bedeutet, dass ein Charakter mit einem Rang von 3 in einer Fertigkeit bei einem Wurf auch die Boni der Ränge 1 und 2 bekommt.
 
 \subsection{Schwierigkeit}
 
@@ -58,7 +84,7 @@ Die Spielleiterin legt hier einen Malus fest, der vor dem Wurf auf den Zielwert 
 
 \begin{enumerate}[leftmargin=*]
 \item Der Spieler beschreibt Absicht und Vorgehen.
-\item Die Spielleiterin bestimmt das passende Attribut und die passende Fertigkeit.
+\item Die Spielleiterin bestimmt das passende Attribut und legt fest, ob eine passende Fertigkeit die Handlung stützt, einschränkt oder improvisiert werden muss.
 \item Alle Modifikatoren werden zusammengerechnet.
 \item Es wird 1W100 gewürfelt.
 \item Ergebnisstufe, unmittelbare Wirkung und Konsequenz werden sofort abgehandelt.
@@ -139,13 +165,62 @@ Wenn die Abfolge relevant wird, gilt:
 \item sonst gleichzeitig
 \end{enumerate}
 
+\section{Attribute}\label{sec:attribute}\index{Attribut}
+
+Attribute beschreiben die grundlegenden Anlagen eines Charakters.
+Sie geben an, wie zuverlässig jemand allein durch Veranlagung, Körper, Geist oder innere Haltung in einem Bereich handeln kann.
+
+Jede Probe wird auf genau ein Attribut abgelegt.
+Dieses Attribut liefert den Zielwert der Probe.
+Eine passende Fertigkeit verändert den Zielwert nicht, sondern bestimmt, wie kontrolliert, sicher oder professionell der Charakter die Handlung ausführt.
+
+\subsection{Attributsstufen}
+
+Attribute liegen in der Regel zwischen 0 und 4.
+Neue Charaktere beginnen mit Werten von 0 bis 3; durch Fortschritt kann ein Attribut auf 4 steigen.
+Jede Attributsstufe hat einen festen Zielwert.
+
+\paragraph{0 -- Schwach}
+Der Charakter ist in diesem Bereich deutlich eingeschränkt, ungeübt oder unterdurchschnittlich. Zielwert \textbf{30}.
+
+\paragraph{1 -- Solide}
+Der Charakter ist alltagstauglich und verlässlich, aber nicht besonders herausragend. Zielwert \textbf{45}.
+
+\paragraph{2 -- Geübt}
+Der Charakter ist klar kompetent und kann sich in belastenden Situationen behaupten. Zielwert \textbf{60}.
+
+\paragraph{3 -- Herausragend}
+Der Charakter gehört zu den Besten, die man in seinem Umfeld gewöhnlich antrifft. Zielwert \textbf{75}.
+
+\paragraph{4 -- Außergewöhnlich}
+Der Charakter erreicht in diesem Bereich ein seltenes, fast schon legendäres Niveau. Zielwert \textbf{90}.
+
+\subsection{Attribute im Spiel}
+
+Die Spielleiterin wählt immer das eine Attribut, das für Absicht und Vorgehen am wichtigsten ist.
+\textbf{Körper} deckt rohe Kraft, Zähigkeit und körperliches Durchhalten ab.
+\textbf{Geschick} steht für Präzision, Schnelligkeit und feine Kontrolle.
+\textbf{Instinkt} regelt Reaktionen, unmittelbares Gespür und den Umgang mit plötzlicher Gefahr.
+\textbf{Geist} beschreibt Analyse, Erinnerung und Verständnis.
+\textbf{Wille} trägt Disziplin, Standhaftigkeit und innere Kontrolle.
+\textbf{Erscheinung} steht für Präsenz, Druck und soziale Wirkung.
+\textbf{Gabe} ist das Attribut für Magie.
+\textbf{Wahrnehmung} steht für scharfe Sinne, Aufmerksamkeit für Details und das rechtzeitige Bemerken von Veränderungen.
+
+\begin{pexample}
+Jamie will im Regen den Fremden an der Tür genauer betrachten.
+Die Spielleiterin verlangt eine Probe auf \textbf{Wahrnehmung}.
+Mit Wahrnehmung 2 hat Jamie einen Zielwert von 60.
+Besitzt er zusätzlich eine passende Fertigkeit, gelten deren Rangvorteile, ohne dass sich der Zielwert selbst erhöht.
+\end{pexample}
+
 \section{Fertigkeiten}\label{sec:fertigkeiten}\index{Fertigkeit}
 
 Fertigkeiten beschreiben Ausbildung, Erfahrung und praktische Kompetenz eines Charakters. Sie ersetzen keine Attribute, sondern zeigen, wie sicher und kontrolliert ein Charakter in einem bestimmten Bereich handeln kann.
 
-Eine Probe wird weiterhin auf das passende Attribut abgelegt. Eine passende Fertigkeit verändert nicht zwingend den Zielwert, sondern den Umgang mit Erfolg, Fehlschlag und Konsequenzen.
+Eine Probe wird weiterhin auf das passende Attribut abgelegt. Eine passende Fertigkeit verändert den Zielwert nicht, sondern den Umgang mit Erfolg, Fehlschlag und Konsequenzen.
 
-Hat ein Charakter keine passende Fertigkeit, kann er einfache Handlungen trotzdem versuchen. Solche Proben gelten als improvisiert. Die Spielleiterin kann komplexe, gefährliche oder spezialisierte Anwendungen ausschließen oder mit zusätzlichen Konsequenzen verbinden.
+Hat ein Charakter keine passende Fertigkeit, kann er einfache Handlungen trotzdem versuchen. Solche Proben gelten als improvisiert. Die Spielleiterin kann komplexe, gefährliche oder spezialisierte Anwendungen ausschließen oder mit zusätzlichen Konsequenzen verbinden. Falls die Probe misslingt, steigt die Konsquenzstufe um 1.
 
 \subsection{Fertigkeitsränge}
 
@@ -164,7 +239,7 @@ Der Charakter handelt routiniert. Einmal pro Szene darf eine passende Probe neu 
 Der Charakter arbeitet mit außergewöhnlicher Kontrolle. Wenn eine passende Probe gelingt, wird die Ergebnisstufe um 1 verbessert.
 
 \paragraph{Rang 4 -- Legendär}
-Der Charakter zählt zu den wenigen herausragenden Könnern seines Fachs. Einmal pro Szene darf er eine Konsequenz aus einer passenden Probe vollständig negieren.
+Der Charakter zählt zu den wenigen herausragenden Könnern seines Fachs. Einmal pro Szene darf er eine Konsequenz aus einer passenden Probe vollständig ignorieren.
 
 \subsection{Fehlende Fertigkeiten}
 

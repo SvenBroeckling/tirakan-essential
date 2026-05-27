@@ -24,11 +24,20 @@ Oder von Hand:
 ```bash
 lualatex sheet.tex
 lualatex sheet.tex
+lualatex npc_sheet.tex
+lualatex npc_sheet.tex
 lualatex main.tex
 lualatex main.tex
 ```
 
 Die zweite LaTeX-Runde ist für Inhaltsverzeichnis und Referenzen nötig.
+
+## Versionierung
+
+Die Versionierung dieses Buches folgt der semantischen Versionierung. Eine Version ist mit
+`vx.y.z` angegeben. Hierbei sind Versionen mit identischer `x` und `y` Version mit dem
+Schwesterprojekt [tirakan-essential-chars](https://github.com/SvenBroeckling/tirakan-essential-chars) kompatibel. 
+Beide Projekte entwickeln sich unabhängig auf der letzten Stelle weiter. 
 
 ## Changelog und Releases
 
