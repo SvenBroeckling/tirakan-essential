@@ -9,6 +9,26 @@ and this project uses semantic versioning through `version.tex`.
 
 ### Changed
 
+## [0.3.3] - 2026-05-27
+
+### Added
+
+- Added a dedicated NPC sheet and included it in the local build and GitHub release artifacts.
+- Added evaluation branch releases that publish prerelease PDFs from `evaluation-*` branches.
+- Added `Wahrnehmung` as the eighth attribute.
+- Added dedicated attribute and skill rules, including fixed attribute target values and cumulative skill rank benefits.
+- Added once-per-session effects to the extended marks.
+
+### Changed
+
+- Changed probes so the target value comes from one attribute, while skills determine training benefits and consequences instead of increasing the target value directly.
+- Changed character creation to account for eight attributes and the revised starting skill model.
+- Renamed a broad set of remaining English combat, faith, magic, downtime, and glossary terms to their German rulebook equivalents.
+- Clarified that tests can use either a relevant attribute alone or a supported attribute with a fitting skill benefit.
+- Added a dedicated `Wegfacette` field to paths and growth.
+- Cleaned up LaTeX structure, German language setup, font handling, and paragraph spacing.
+- Documented semantic version compatibility with `tirakan-essential-chars`.
+
 ## [0.2.2] - 2026-05-25
 
 ### Changed
